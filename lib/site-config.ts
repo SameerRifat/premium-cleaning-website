@@ -20,6 +20,8 @@ export const siteConfig = {
   shortName: "Pristine",
   /** Used in the title template and as a one-line positioning statement. */
   tagline: "Trusted Home & Office Cleaning Across the UAE",
+  /** Year the business was founded — used in About copy and Organization schema. */
+  founded: "2019",
   description:
     "Pristine Home Services delivers reliable, fully-insured residential and commercial cleaning across Dubai, Abu Dhabi and Sharjah. Vetted professionals, eco-friendly products, and same-day availability.",
 
