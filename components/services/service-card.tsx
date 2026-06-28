@@ -1,19 +1,17 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Clock } from "lucide-react"
+import { ArrowUpRight, Clock } from "lucide-react"
 import { categoryMeta, type Service } from "@/lib/services"
 
 /**
- * VIP-tier service card (Server Component — no client JS, all motion is CSS).
+ * Editorial, photo-forward service card (Server Component — all motion is CSS).
  *
- * Design direction: a full-bleed "lifestyle photo" card in the spirit of luxury
- * hospitality/spa sites (think hotel service tiles) rather than a SaaS icon card.
- * The image owns the top of the card (4:3, object-cover), zooms slowly on hover
- * for an unhurried, premium feel, and a permanent bottom scrim adds depth. The
- * card lifts and an animated gradient border (blue→green brand gradient) fades in
- * on hover. The gradient border is painted with a `before` pseudo-element using
- * the CSS mask "exclude" trick (gradient fill + content-box/border-box mask) so a
- * crisp 1.5px ring appears with zero extra DOM and zero JavaScript.
+ * Design direction: an immersive full-bleed image tile in the spirit of luxury
+ * hospitality/editorial sites — the photograph fills the entire card and the
+ * copy sits on top over a deep gradient scrim, rather than the flat
+ * image-top / text-bottom pattern. On hover the image slowly zooms, the scrim
+ * deepens, the one-line description reveals with a CSS grid-rows height
+ * transition, and a circular CTA fills with the brand gradient. No JavaScript.
  */
 type ServiceCardProps = {
   service: Service
@@ -23,68 +21,69 @@ type ServiceCardProps = {
 
 export function ServiceCard({ service, priority = false }: ServiceCardProps) {
   return (
-    <article
-      className={[
-        "group relative flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl bg-card",
-        "shadow-md transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:shadow-black/10",
-        // Animated gradient border on hover, painted via masked pseudo-element.
-        "before:pointer-events-none before:absolute before:inset-0 before:z-10 before:rounded-2xl before:p-[1.5px]",
-        "before:bg-gradient-primary before:opacity-0 before:transition-opacity before:duration-300 group-hover:before:opacity-100",
-        "before:[mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[mask-composite:exclude]",
-        "before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor]",
-      ].join(" ")}
-    >
-      {/* Image — the visual hero of the card */}
-      <div className="relative aspect-[4/3] overflow-hidden">
-        <Image
-          src={service.image.src || "/placeholder.svg"}
-          alt={service.image.alt}
-          fill
-          priority={priority}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-        />
-        {/* Permanent bottom scrim for depth and premium legibility */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-linear-to-t from-black/30 via-transparent to-transparent"
-        />
-        {/* Category badge */}
-        <span className="absolute left-3 top-3 rounded-full bg-white/85 px-2.5 py-1 text-[0.7rem] font-medium text-ink backdrop-blur-sm">
+    <article className="group relative aspect-[4/5] overflow-hidden rounded-3xl bg-ink shadow-md ring-1 ring-black/5 transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/20">
+      {/* Photograph — the hero of the card */}
+      <Image
+        src={service.image.src || "/placeholder.svg"}
+        alt={service.image.alt}
+        fill
+        priority={priority}
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]"
+      />
+
+      {/* Gradient scrim for legibility + depth (deepens on hover) */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-linear-to-t from-ink/95 from-5% via-ink/45 via-45% to-transparent to-80% opacity-90 transition-opacity duration-500 group-hover:opacity-100"
+      />
+
+      {/* Top row: category eyebrow + optional Popular badge */}
+      <div className="absolute inset-x-0 top-0 flex items-start justify-between p-5">
+        <span className="rounded-full bg-white/10 px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.14em] text-white/90 backdrop-blur-md ring-1 ring-white/15">
           {categoryMeta[service.category].label}
         </span>
-        {/* Popular badge */}
         {service.popular && (
-          <span className="absolute right-3 top-3 rounded-full bg-gradient-cta px-2.5 py-1 text-[0.7rem] font-semibold text-primary-foreground shadow-sm">
+          <span className="rounded-full bg-gradient-cta px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-primary-foreground shadow-sm">
             Popular
           </span>
         )}
       </div>
 
-      {/* Content */}
-      <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <h3 className="text-lg font-semibold tracking-tight text-card-foreground">
-          <Link
-            href={`/services/${service.slug}`}
-            className="after:absolute after:inset-0 after:z-20 focus-visible:outline-none"
-          >
-            {service.name}
-          </Link>
-        </h3>
-        <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted-foreground">
-          {service.shortDescription}
-        </p>
+      {/* Bottom content overlay */}
+      <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6">
+        <div className="min-w-0">
+          <h3 className="font-heading text-xl font-semibold leading-tight tracking-tight text-white sm:text-2xl">
+            <Link
+              href={`/services/${service.slug}`}
+              className="after:absolute after:inset-0 after:z-10 focus-visible:outline-none"
+            >
+              {service.name}
+            </Link>
+          </h3>
 
-        <div className="mt-auto flex items-center justify-between pt-5">
-          <span className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
-            <Clock className="size-3.5" />
+          {/* Description reveals on hover via grid-rows height transition */}
+          <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-out group-hover:grid-rows-[1fr]">
+            <div className="overflow-hidden">
+              <p className="pt-2 text-sm leading-relaxed text-white/80">
+                {service.shortDescription}
+              </p>
+            </div>
+          </div>
+
+          <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-white/70">
+            <Clock className="size-3.5" aria-hidden="true" />
             {service.duration}
           </span>
-          <span className="flex items-center gap-1 text-sm font-semibold text-gradient-primary">
-            Details
-            <ArrowRight className="size-4 text-primary transition-transform duration-200 group-hover:translate-x-1" />
-          </span>
         </div>
+
+        {/* Circular CTA — fills with brand gradient on hover */}
+        <span
+          aria-hidden="true"
+          className="grid size-11 shrink-0 place-items-center rounded-full text-white ring-1 ring-white/40 backdrop-blur-md transition-all duration-300 group-hover:bg-gradient-primary group-hover:text-primary-foreground group-hover:ring-transparent"
+        >
+          <ArrowUpRight className="size-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        </span>
       </div>
     </article>
   )
