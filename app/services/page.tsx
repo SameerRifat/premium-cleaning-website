@@ -11,14 +11,14 @@ import { siteConfig } from "@/lib/site-config"
 export const metadata: Metadata = {
   title: "Our Cleaning Services",
   description:
-    "Explore the full range of residential, specialised and commercial cleaning services from Pristine Home Services across Dubai, Abu Dhabi and Sharjah. Vetted, fully-insured professionals.",
+    "Explore the full range of residential, specialised and commercial cleaning services from Pristine Home Services across Sharjah and Ajman. Vetted, fully-insured professionals.",
   alternates: {
     canonical: "/services",
   },
   openGraph: {
     title: `Our Cleaning Services | ${siteConfig.name}`,
     description:
-      "Residential, specialised and commercial cleaning across the UAE — delivered by vetted, fully-insured professionals.",
+      "Residential, specialised and commercial cleaning across Sharjah & Ajman — delivered by vetted, fully-insured professionals.",
     url: `${siteConfig.url}/services`,
     type: "website",
   },

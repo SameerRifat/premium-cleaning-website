@@ -1,6 +1,6 @@
 const stats = [
   { value: "12,000+", label: "Properties cleaned" },
-  { value: "4", label: "Emirates served" },
+  { value: "2", label: "Emirates served" },
   { value: "98%", label: "Client satisfaction" },
   { value: "8+", label: "Years in the UAE" },
 ]
@@ -23,7 +23,7 @@ export function AboutStats() {
           Pristine by the numbers
         </p>
 
-        <dl className="grid grid-cols-2 gap-y-10 sm:gap-y-12 lg:grid-cols-4">
+        <dl className="grid grid-cols-2 gap-x-2 gap-y-10 sm:gap-y-12 lg:grid-cols-4">
           {stats.map((stat, index) => {
             // Center divider on mobile (2-col), full dividers on desktop (4-col).
             const divider =
@@ -35,10 +35,10 @@ export function AboutStats() {
             return (
               <div
                 key={stat.label}
-                className={`flex flex-col gap-2 px-3 sm:px-6 lg:px-8 ${divider}`}
+                className={`flex min-w-0 flex-col gap-2 px-3 sm:px-6 lg:px-8 ${divider}`}
               >
                 <dt className="sr-only">{stat.label}</dt>
-                <dd className="font-heading text-5xl font-bold leading-none tracking-tight text-ink-foreground sm:text-6xl">
+                <dd className="font-heading text-4xl font-bold leading-none tracking-tight text-ink-foreground sm:text-6xl">
                   {stat.value}
                 </dd>
                 <p

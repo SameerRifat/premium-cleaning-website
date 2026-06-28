@@ -35,10 +35,10 @@ export const metadata: Metadata = {
   applicationName: siteConfig.name,
   keywords: [
     'cleaning services UAE',
-    'home cleaning Dubai',
-    'deep cleaning Abu Dhabi',
+    'home cleaning Sharjah',
+    'deep cleaning Ajman',
     'office cleaning Sharjah',
-    'maid service Dubai',
+    'maid service Ajman',
     siteConfig.name,
   ],
   openGraph: {
@@ -98,7 +98,7 @@ export default function RootLayout({
       <body className="font-sans antialiased" suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >

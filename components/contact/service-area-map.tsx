@@ -41,8 +41,8 @@ export function ServiceAreaMap() {
               Chances are, we&apos;re already in your area
             </h2>
             <p className="text-pretty leading-relaxed text-muted-foreground">
-              {siteConfig.shortName} serves homes and offices right across the
-              Emirates. Based in {address.addressLocality}, our teams cover the
+              {siteConfig.shortName} serves homes and offices across Sharjah &
+              Ajman. Based in {address.addressLocality}, our teams cover the
               communities below — and we&apos;re always expanding.
             </p>
           </div>

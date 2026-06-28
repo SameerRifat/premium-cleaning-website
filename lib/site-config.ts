@@ -19,9 +19,9 @@ export const siteConfig = {
   name: "Pristine Home Services",
   shortName: "Pristine",
   /** Used in the title template and as a one-line positioning statement. */
-  tagline: "Trusted Home & Office Cleaning Across the UAE",
+  tagline: "Trusted Home & Office Cleaning Across Sharjah & Ajman",
   description:
-    "Pristine Home Services delivers reliable, fully-insured residential and commercial cleaning across Dubai, Abu Dhabi and Sharjah. Vetted professionals, eco-friendly products, and same-day availability.",
+    "Pristine Home Services delivers reliable, fully-insured residential and commercial cleaning across Sharjah and Ajman. Vetted professionals, eco-friendly products, and same-day availability.",
 
   /**
    * Canonical site URL. Used by metadataBase and structured data. Replace with
@@ -32,11 +32,11 @@ export const siteConfig = {
   /** Contact details (NAP — Name, Address, Phone — must stay consistent site-wide). */
   contact: {
     /** E.164 format for tel: links. */
-    phone: "+971 4 000 0000",
-    phoneHref: "tel:+97140000000",
+    phone: "+971588764651",
+    phoneHref: "tel:+971588764651",
     /** Digits only, international format, for wa.me links. */
-    whatsapp: "971500000000",
-    whatsappDisplay: "+971 50 000 0000",
+    whatsapp: "971588764651",
+    whatsappDisplay: "+971 58 876 4651",
     email: "hello@pristinehomeservices.ae",
     /** Default pre-filled WhatsApp message. */
     whatsappMessage:
@@ -45,17 +45,17 @@ export const siteConfig = {
 
   /** Postal address used for the LocalBusiness schema and footer. */
   address: {
-    streetAddress: "Office 000, Business Bay",
-    addressLocality: "Dubai",
-    addressRegion: "Dubai",
+    streetAddress: "Office 000, Al Majaz",
+    addressLocality: "Sharjah",
+    addressRegion: "Sharjah",
     postalCode: "00000",
     addressCountry: "AE",
   },
 
-  /** Approximate geo-coordinates of the primary location (Business Bay, Dubai). */
+  /** Approximate geo-coordinates of the primary location (Al Majaz, Sharjah). */
   geo: {
-    latitude: 25.1857,
-    longitude: 55.2645,
+    latitude: 25.3290,
+    longitude: 55.3800,
   },
 
   /** Operating hours used in copy and structured data. */
@@ -90,27 +90,24 @@ export const siteConfig = {
   /** Emirates and communities served, for the service-areas teaser + schema. */
   serviceAreas: [
     {
-      name: "Dubai",
-      communities: [
-        "Downtown & Business Bay",
-        "Dubai Marina & JBR",
-        "Palm Jumeirah",
-        "Jumeirah & Umm Suqeim",
-        "Arabian Ranches",
-      ],
-    },
-    {
-      name: "Abu Dhabi",
-      communities: [
-        "Al Reem Island",
-        "Yas Island",
-        "Saadiyat Island",
-        "Khalifa City",
-      ],
-    },
-    {
       name: "Sharjah",
-      communities: ["Al Majaz", "Al Khan", "Muwaileh", "Al Nahda"],
+      communities: [
+        "Al Majaz",
+        "Al Khan",
+        "Muwaileh",
+        "Al Nahda",
+        "Al Qasimia",
+      ],
+    },
+    {
+      name: "Ajman",
+      communities: [
+        "Al Nuaimiya",
+        "Al Rashidiya",
+        "Al Jurf",
+        "Ajman Corniche",
+        "Al Mowaihat",
+      ],
     },
   ] satisfies ServiceArea[],
 } as const

@@ -47,7 +47,7 @@ export type Service = {
   category: ServiceCategory
   /** Indicative starting price in AED. */
   priceFromAed: number
-  /** Typical duration label, e.g. "2–3 hrs". */
+  /** Typical duration label, e.g. "3–4 hrs". Bookings have a 3-hour minimum. */
   duration: string
   /** Highlight on the home grid + sort earlier. */
   popular?: boolean
@@ -104,7 +104,7 @@ export const services: Service[] = [
     icon: Sparkles,
     category: "residential",
     priceFromAed: 35,
-    duration: "2–4 hrs",
+    duration: "3–4 hrs",
     popular: true,
     whatsIncluded: [
       "Dusting and surface wipe-down throughout",
@@ -143,7 +143,7 @@ export const services: Service[] = [
       alt: "A professional cleaner tidying a bright, modern living room in a UAE apartment",
     },
     metaDescription:
-      "Reliable home cleaning across Dubai, Abu Dhabi and Sharjah from AED 35. Vetted, insured cleaners for regular or one-off apartment and villa cleaning. Book on WhatsApp.",
+      "Reliable home cleaning across Sharjah & Ajman from AED 35. Vetted, insured cleaners for regular or one-off apartment and villa cleaning. Book on WhatsApp.",
   },
   {
     slug: "deep-cleaning",
@@ -194,7 +194,7 @@ export const services: Service[] = [
       alt: "A cleaner deep-cleaning a kitchen, scrubbing tiles and surfaces with professional equipment",
     },
     metaDescription:
-      "Intensive deep cleaning in the UAE from AED 299. Top-to-bottom descaling, degreasing and detailing of your whole home by insured professionals. Book on WhatsApp.",
+      "Intensive deep cleaning across Sharjah & Ajman from AED 299. Top-to-bottom descaling, degreasing and detailing of your whole home by insured professionals. Book on WhatsApp.",
   },
   {
     slug: "move-in-move-out",
@@ -244,7 +244,7 @@ export const services: Service[] = [
       alt: "An empty, freshly cleaned apartment with sunlight, ready for handover or move-in",
     },
     metaDescription:
-      "Move in / move out cleaning in the UAE from AED 399. Tenancy-standard handover cleans, inside cabinets and appliances, to protect your deposit. Book on WhatsApp.",
+      "Move in / move out cleaning across Sharjah & Ajman from AED 399. Tenancy-standard handover cleans, inside cabinets and appliances, to protect your deposit. Book on WhatsApp.",
   },
   {
     slug: "sofa-carpet-cleaning",
@@ -256,7 +256,7 @@ export const services: Service[] = [
     icon: Sofa,
     category: "specialized",
     priceFromAed: 149,
-    duration: "1–3 hrs",
+    duration: "3 hrs",
     popular: true,
     whatsIncluded: [
       "Vacuuming and fabric pre-treatment",
@@ -295,7 +295,7 @@ export const services: Service[] = [
       alt: "A professional using a hot-water extraction machine to clean a fabric sofa",
     },
     metaDescription:
-      "Sofa, mattress and carpet cleaning in the UAE from AED 149. Hot-water extraction that lifts stains, dust and odours with fabric-safe drying. Book on WhatsApp.",
+      "Sofa, mattress and carpet cleaning across Sharjah & Ajman from AED 149. Hot-water extraction that lifts stains, dust and odours with fabric-safe drying. Book on WhatsApp.",
   },
   {
     slug: "office-cleaning",
@@ -345,7 +345,7 @@ export const services: Service[] = [
       alt: "A cleaner maintaining a modern open-plan office with desks and glass partitions",
     },
     metaDescription:
-      "Office and commercial cleaning across the UAE from AED 45. Flexible after-hours contracts for offices, retail and clinics with trained, vetted staff. Book on WhatsApp.",
+      "Office and commercial cleaning across Sharjah & Ajman from AED 45. Flexible after-hours contracts for offices, retail and clinics with trained, vetted staff. Book on WhatsApp.",
   },
   {
     slug: "kitchen-appliance-cleaning",
@@ -357,7 +357,7 @@ export const services: Service[] = [
     icon: Refrigerator,
     category: "specialized",
     priceFromAed: 129,
-    duration: "1–2 hrs",
+    duration: "3 hrs",
     whatsIncluded: [
       "Oven and hob degreasing inside and out",
       "Fridge and freezer interior cleaning",
@@ -395,7 +395,7 @@ export const services: Service[] = [
       alt: "A spotless modern kitchen with a freshly cleaned oven and gleaming countertops",
     },
     metaDescription:
-      "Kitchen and appliance cleaning in the UAE from AED 129. Oven, hob and fridge degreasing for a hygienic, sparkling kitchen by insured pros. Book on WhatsApp.",
+      "Kitchen and appliance cleaning across Sharjah & Ajman from AED 129. Oven, hob and fridge degreasing for a hygienic, sparkling kitchen by insured pros. Book on WhatsApp.",
   },
   {
     slug: "ac-duct-cleaning",
@@ -407,7 +407,7 @@ export const services: Service[] = [
     icon: Wind,
     category: "specialized",
     priceFromAed: 199,
-    duration: "2–4 hrs",
+    duration: "3–4 hrs",
     whatsIncluded: [
       "Filter and grille cleaning",
       "Duct dust and debris removal",
@@ -445,7 +445,7 @@ export const services: Service[] = [
       alt: "A technician cleaning a ceiling air-conditioning unit and filters",
     },
     metaDescription:
-      "AC and duct cleaning in the UAE from AED 199. Remove dust, mould and allergens to improve air quality and cooling efficiency. Book on WhatsApp.",
+      "AC and duct cleaning across Sharjah & Ajman from AED 199. Remove dust, mould and allergens to improve air quality and cooling efficiency. Book on WhatsApp.",
   },
   {
     slug: "laundry-ironing",
@@ -495,7 +495,7 @@ export const services: Service[] = [
       alt: "Neatly folded fresh laundry and pressed shirts stacked on a clean surface",
     },
     metaDescription:
-      "Laundry and ironing in the UAE from AED 25. Wash, fold and professional pressing as a standalone service or add-on to your home clean. Book on WhatsApp.",
+      "Laundry and ironing across Sharjah & Ajman from AED 25. Wash, fold and professional pressing as a standalone service or add-on to your home clean. Book on WhatsApp.",
   },
 ]
 

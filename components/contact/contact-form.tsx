@@ -243,7 +243,7 @@ export function ContactForm() {
                 type="tel"
                 inputMode="tel"
                 autoComplete="tel"
-                placeholder="+971 50 000 0000"
+                placeholder="+971 58 876 4651"
                 className="h-11"
                 aria-invalid={!!errors.phone}
                 {...register("phone")}

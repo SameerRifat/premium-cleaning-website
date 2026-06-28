@@ -39,7 +39,7 @@ export function HowItWorks() {
                 <span className="flex size-12 items-center justify-center rounded-xl bg-gradient-primary text-primary-foreground">
                   <step.icon className="size-6" />
                 </span>
-                <span className="font-heading text-4xl font-bold text-border">
+                <span className="font-heading text-4xl font-bold text-[#188b8b]/20">
                   {String(index + 1).padStart(2, "0")}
                 </span>
               </div>

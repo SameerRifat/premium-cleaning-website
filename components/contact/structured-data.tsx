@@ -46,7 +46,7 @@ export function ContactPageJsonLd() {
       "@id": `${CONTACT_URL}/#contactpage`,
       url: CONTACT_URL,
       name: `Contact ${siteConfig.name}`,
-      description: `Get in touch with ${siteConfig.name} for cleaning across Dubai, Abu Dhabi, Sharjah and Ajman. Call, message on WhatsApp, email, or send the contact form.`,
+      description: `Get in touch with ${siteConfig.name} for cleaning across Sharjah and Ajman. Call, message on WhatsApp, email, or send the contact form.`,
       isPartOf: { "@id": `${siteConfig.url}/#website` },
       mainEntity: { "@id": BUSINESS_ID },
       about: { "@id": BUSINESS_ID },
