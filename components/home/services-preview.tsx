@@ -29,7 +29,7 @@ export function ServicesPreview() {
           >
             <CardHeader>
               <div className="flex items-center justify-between">
-                <span className="flex size-11 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                <span className="flex size-11 items-center justify-center rounded-lg bg-gradient-primary text-primary-foreground shadow-sm transition-transform group-hover:scale-105">
                   <service.icon className="size-5" />
                 </span>
                 {service.popular && (
