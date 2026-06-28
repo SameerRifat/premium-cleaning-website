@@ -44,7 +44,7 @@ export function SiteHeader() {
             rel="noopener noreferrer"
             className={cn(
               buttonVariants({ size: "sm" }),
-              "hidden sm:inline-flex"
+              "hidden bg-gradient-cta transition-opacity hover:opacity-90 sm:inline-flex"
             )}
           >
             <MessageCircle data-icon="inline-start" />
@@ -79,7 +79,10 @@ export function SiteHeader() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
-                  className={buttonVariants({ className: "w-full" })}
+                  className={buttonVariants({
+                    className:
+                      "w-full bg-gradient-cta transition-opacity hover:opacity-90",
+                  })}
                 >
                   <MessageCircle data-icon="inline-start" />
                   Book on WhatsApp
