@@ -27,10 +27,10 @@ export function Logo({
       <Image
         src={logoSrc}
         alt={logoAlt}
-        width={compact ? 140 : 220}
-        height={compact ? 40 : 60}
+        width={compact ? 823 : 955}
+        height={compact ? 260 : 329}
         priority
-        className="h-auto w-auto"
+        className={cn("w-auto", compact ? "h-9" : "h-10")}
       />
     </Link>
   )
