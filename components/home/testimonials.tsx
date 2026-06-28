@@ -142,39 +142,58 @@ export function Testimonials() {
                 key={t.name}
                 className="pl-6 sm:basis-1/2 lg:basis-1/3"
               >
-                <figure className="group relative flex h-full flex-col gap-6 rounded-3xl border border-border/70 bg-card p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-transparent hover:shadow-xl">
-                  {/* Gradient ring on hover via masked pseudo-element. */}
+                <figure className="group relative isolate flex h-full flex-col overflow-hidden rounded-3xl border border-border/60 bg-card shadow-sm transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-primary/10">
+                  {/* Layer 0: gradient ring that fades in on hover. Sits behind content. */}
                   <span
                     aria-hidden
-                    className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-primary p-px opacity-0 transition-opacity duration-300 [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] [mask-composite:exclude] group-hover:opacity-100"
+                    className="pointer-events-none absolute inset-0 -z-10 rounded-3xl bg-gradient-primary opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                   />
-                  <div className="flex items-center justify-between">
-                    <span className="flex size-12 items-center justify-center rounded-2xl bg-gradient-primary text-primary-foreground shadow-sm">
-                      <Quote className="size-6" />
-                    </span>
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute inset-px -z-10 rounded-[calc(1.5rem-1px)] bg-card"
+                  />
+                  {/* Layer 0: soft brand wash glow from the top, revealed on hover. */}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute -top-16 left-1/2 -z-10 size-40 -translate-x-1/2 rounded-full bg-gradient-primary opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-20"
+                  />
+                  {/* Oversized decorative quotation watermark. */}
+                  <Quote
+                    aria-hidden
+                    className="absolute right-6 top-6 size-20 rotate-180 fill-primary/[0.06] text-transparent transition-colors duration-500 group-hover:fill-primary/10"
+                  />
+
+                  {/* Content sits above all decorative layers. */}
+                  <div className="relative z-10 flex h-full flex-col gap-6 p-8">
                     <div
-                      className="flex items-center gap-0.5 text-primary"
+                      className="flex items-center gap-1 text-primary"
                       aria-label="5 out of 5 stars"
                     >
                       {Array.from({ length: 5 }).map((_, i) => (
-                        <Star key={i} className="size-4 fill-current" />
+                        <Star key={i} className="size-[18px] fill-current" />
                       ))}
                     </div>
+
+                    <blockquote className="flex-1 text-pretty text-lg font-medium leading-relaxed tracking-[-0.01em] text-foreground">
+                      {`\u201C${t.quote}\u201D`}
+                    </blockquote>
+
+                    <figcaption className="mt-2 flex items-center gap-4 border-t border-border/70 pt-6">
+                      <span className="rounded-full bg-gradient-primary p-px shadow-sm">
+                        <Avatar className="size-12 border-2 border-card">
+                          <AvatarFallback className="bg-secondary text-base font-semibold text-secondary-foreground">
+                            {t.initials}
+                          </AvatarFallback>
+                        </Avatar>
+                      </span>
+                      <div className="text-sm leading-tight">
+                        <p className="font-semibold text-foreground">{t.name}</p>
+                        <p className="mt-1 text-muted-foreground">
+                          {t.location}
+                        </p>
+                      </div>
+                    </figcaption>
                   </div>
-                  <blockquote className="flex-1 text-pretty text-lg leading-relaxed text-foreground">
-                    {`\u201C${t.quote}\u201D`}
-                  </blockquote>
-                  <figcaption className="flex items-center gap-3 border-t border-border pt-5">
-                    <Avatar className="size-11">
-                      <AvatarFallback className="bg-secondary font-semibold text-secondary-foreground">
-                        {t.initials}
-                      </AvatarFallback>
-                    </Avatar>
-                    <div className="text-sm">
-                      <p className="font-semibold text-foreground">{t.name}</p>
-                      <p className="text-muted-foreground">{t.location}</p>
-                    </div>
-                  </figcaption>
                 </figure>
               </CarouselItem>
             ))}
