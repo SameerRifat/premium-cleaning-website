@@ -16,7 +16,7 @@ export function SiteFooter() {
 
   return (
     <footer className="border-t border-border bg-card text-card-foreground">
-      <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+      <div className="mx-auto w-full max-w-7xl px-4 pt-12 pb-6 sm:px-6 lg:px-8 lg:pt-16 lg:pb-8">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand + NAP */}
           <div className="flex flex-col gap-4">
@@ -117,13 +117,13 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 sm:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-center gap-4 border-t border-border pt-6 sm:flex-row">
           <p className="text-xs text-muted-foreground">
             &copy; {year} {siteConfig.name}. All rights reserved.
           </p>
 
-          <div className="flex items-center gap-4">
-            {/* <nav aria-label="Legal" className="flex items-center gap-4">
+          {/* <div className="flex items-center gap-4">
+            <nav aria-label="Legal" className="flex items-center gap-4">
               {legalLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -133,7 +133,7 @@ export function SiteFooter() {
                   {link.label}
                 </Link>
               ))}
-            </nav> */}
+            </nav>
             <div className="flex items-center gap-2">
               {siteConfig.social.instagram && (
                 <a
@@ -158,7 +158,7 @@ export function SiteFooter() {
                 </a>
               )}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
