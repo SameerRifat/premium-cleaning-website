@@ -21,22 +21,16 @@ export function Hero() {
         priority
         sizes="100vw"
         className="-z-20 object-cover object-[100%_center] lg:object-center"
-        // className="-z-20 object-cover object-[70%_center] lg:object-center"
+      // className="-z-20 object-cover object-[70%_center] lg:object-center"
       />
 
       {/* Layer 2 — directional gradient overlay for legibility */}
       <div className="bg-gradient-overlay absolute inset-0 -z-10" aria-hidden="true" />
 
       {/* Layer 3 — content */}
-      <div
-        className="relative z-10 mx-auto flex w-full max-w-7xl flex-col gap-6 px-4 py-16 text-center sm:px-6 lg:px-8 lg:py-24 lg:text-left"
-        style={{
-          paddingLeft: "max(1rem, env(safe-area-inset-left))",
-          paddingRight: "max(1rem, env(safe-area-inset-right))",
-        }}
-      >
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col gap-6 px-4 py-16 text-center sm:px-6 md:text-left lg:px-8 lg:py-24">
         {/* Status pill */}
-        <span className="mx-auto inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-gradient-cta px-4 py-1.5 text-xs font-medium text-white shadow-sm shadow-black/20 backdrop-blur-sm lg:mx-0">
+        <span className="mx-auto inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-gradient-cta px-4 py-1.5 text-xs font-medium text-white shadow-sm shadow-black/20 backdrop-blur-sm md:mx-0">
           <span className="flex size-1.5 rounded-full bg-white" />
           Trusted across Sharjah &amp; Ajman
         </span>
@@ -48,14 +42,14 @@ export function Hero() {
         </h1>
 
         {/* Subheadline */}
-        <p className="mx-auto max-w-xl text-pretty text-lg leading-relaxed text-white/90 lg:mx-0">
+        <p className="mx-auto max-w-xl text-pretty text-lg leading-relaxed text-white/90 md:mx-0">
           {siteConfig.name} connects you with professional, fully-insured
           cleaners for your home or office. Book in under a minute and relax
           while we take care of the rest.
         </p>
 
         {/* CTAs */}
-        <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row lg:justify-start">
+        <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:justify-center md:justify-start">
           <a
             href={whatsappLink()}
             target="_blank"
@@ -81,7 +75,7 @@ export function Hero() {
         </div>
 
         {/* Trust signal strip */}
-        <ul className="mx-auto flex w-full max-w-md flex-col items-center gap-x-6 gap-y-3 pt-4 sm:max-w-none sm:flex-row sm:flex-wrap sm:justify-center lg:mx-0 lg:justify-start">
+        <ul className="mx-auto flex w-full max-w-md flex-col items-center gap-x-6 gap-y-3 pt-4 sm:max-w-none sm:flex-row sm:flex-wrap sm:justify-center md:mx-0 md:justify-start">
           {highlights.map((item, i) => (
             <li
               key={item.label}
@@ -95,18 +89,18 @@ export function Hero() {
             </li>
           ))}
         </ul>
-      </div>
 
-      {/* Floating social-proof card (desktop only to avoid CTA overlap on mobile) */}
-      <div className="absolute right-28 bottom-8 z-10 hidden items-center gap-3 rounded-2xl border border-white/20 bg-white/10 p-4 shadow-xl shadow-black/20 backdrop-blur-md lg:flex">
-        <div className="flex items-center gap-0.5 text-amber-300">
-          {Array.from({ length: 5 }).map((_, i) => (
-            <Star key={i} className="size-4 fill-current" aria-hidden="true" />
-          ))}
-        </div>
-        <div className="text-sm">
-          <p className="font-semibold text-white">Loved by UAE families</p>
-          <p className="text-xs text-white/80">Thousands of cleans completed</p>
+        {/* Floating social-proof card (desktop only to avoid CTA overlap on mobile) */}
+        <div className="absolute right-8 bottom-6 z-10 hidden items-center gap-3 rounded-2xl border border-white/20 bg-white/10 p-4 shadow-xl shadow-black/20 backdrop-blur-md lg:flex">
+          <div className="flex items-center gap-0.5 text-amber-300">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Star key={i} className="size-4 fill-current" aria-hidden="true" />
+            ))}
+          </div>
+          <div className="text-sm">
+            <p className="font-semibold text-white">Loved by UAE families</p>
+            <p className="text-xs text-white/80">Thousands of cleans completed</p>
+          </div>
         </div>
       </div>
     </section>
