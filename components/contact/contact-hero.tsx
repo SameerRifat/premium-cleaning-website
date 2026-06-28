@@ -34,8 +34,8 @@ export function ContactHero() {
         </nav>
 
         <div className="flex max-w-3xl flex-col gap-6">
-          <span className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-            <span className="h-px w-8 bg-primary" />
+          <span className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-gradient-primary">
+            <span className="h-px w-8 bg-gradient-primary" />
             Get in touch
           </span>
           <h1 className="text-balance font-heading text-[2.5rem] font-bold leading-[1.04] tracking-tight text-foreground sm:text-5xl lg:text-6xl">

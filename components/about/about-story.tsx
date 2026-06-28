@@ -27,8 +27,8 @@ export function AboutStory() {
         </div>
 
         <div className="flex flex-col gap-6">
-          <span className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-            <span className="h-px w-8 bg-primary" />
+          <span className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-gradient-primary">
+            <span className="h-px w-8 bg-gradient-primary" />
             Our Story
           </span>
           <h2 className="text-balance font-heading text-3xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-[2.75rem]">

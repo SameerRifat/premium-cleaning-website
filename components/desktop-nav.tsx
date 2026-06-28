@@ -38,10 +38,10 @@ const serviceGroups = getServicesByCategory()
 // Services is rendered as the mega-menu trigger; the rest are plain links.
 const simpleItems = navItems.filter((item) => item.href !== "/services")
 
-// Subtle active treatment: a primary underline anchored to the bottom of the
+// Subtle active treatment: a gradient underline anchored to the bottom of the
 // item, sized to sit just inside its horizontal padding.
 const activeUnderline =
-  "after:absolute after:inset-x-2.5 after:bottom-1 after:h-0.5 after:rounded-full after:bg-primary after:content-['']"
+  "after:absolute after:inset-x-2.5 after:bottom-1 after:h-0.5 after:rounded-full after:bg-[image:var(--gradient-primary)] after:content-['']"
 
 function useIsActive() {
   const pathname = usePathname()
@@ -62,7 +62,7 @@ function ServicesMegaMenu() {
       {/* Featured entry point to the full index */}
       <NavigationMenuLink
         render={<Link href="/services" />}
-        className="group/feature flex flex-col justify-between gap-6 rounded-xl bg-primary p-5 text-primary-foreground hover:bg-primary focus:bg-primary data-active:bg-primary"
+        className="group/feature flex flex-col justify-between gap-6 rounded-xl bg-gradient-primary text-primary-foreground p-5 hover:bg-primary focus:bg-primary data-active:bg-primary"
       >
         <div className="flex flex-col gap-2.5">
           <span className="flex size-10 items-center justify-center rounded-lg bg-primary-foreground/15">

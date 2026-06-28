@@ -48,8 +48,8 @@ export function AboutCredentials() {
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20 lg:px-8 lg:py-28">
         {/* Sticky editorial heading */}
         <div className="flex flex-col gap-6 lg:sticky lg:top-28 lg:self-start">
-          <span className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-            <span className="h-px w-8 bg-primary" />
+          <span className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-gradient-primary">
+            <span className="h-px w-8 bg-gradient-primary" />
             Why you can trust us
           </span>
           <h2 className="text-balance font-heading text-3xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-[2.75rem]">
@@ -63,7 +63,12 @@ export function AboutCredentials() {
             href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className={buttonVariants({ size: "lg", className: "mt-1 w-fit" })}
+            // className={buttonVariants({ size: "lg", className: "mt-1 w-fit" })}
+            className={buttonVariants({
+              className:
+                "w-fit mt-1 bg-gradient-cta transition-opacity hover:opacity-90",
+              size: "lg",
+            })}
           >
             <MessageCircle data-icon="inline-start" />
             Ask us anything first

@@ -33,7 +33,7 @@ export function ContactFaq() {
     <section className="border-t border-border bg-secondary/30">
       <div className="mx-auto w-full max-w-3xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         <div className="flex flex-col items-center gap-3 text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+          <span className="text-xs font-semibold uppercase tracking-[0.18em] text-gradient-primary">
             Before you reach out
           </span>
           <h2 className="text-balance font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
