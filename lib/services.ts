@@ -9,13 +9,13 @@
 
 import {
   Sparkles,
-  Sofa,
+  // Sofa, // commented out with Sofa & Carpet Cleaning service
   Building2,
   SprayCan,
   Hammer,
   Shirt,
   Refrigerator,
-  Wind,
+  // Wind, // commented out with AC & Duct Cleaning service
   type LucideIcon,
 } from "lucide-react"
 
@@ -246,6 +246,7 @@ export const services: Service[] = [
     metaDescription:
       "Move in / move out cleaning across Sharjah & Ajman from AED 399. Tenancy-standard handover cleans, inside cabinets and appliances, to protect your deposit. Book on WhatsApp.",
   },
+  /* Temporarily removed at client's request — Sofa & Carpet Cleaning
   {
     slug: "sofa-carpet-cleaning",
     name: "Sofa & Carpet Cleaning",
@@ -297,6 +298,7 @@ export const services: Service[] = [
     metaDescription:
       "Sofa, mattress and carpet cleaning across Sharjah & Ajman from AED 149. Hot-water extraction that lifts stains, dust and odours with fabric-safe drying. Book on WhatsApp.",
   },
+  */
   {
     slug: "office-cleaning",
     name: "Office & Commercial",
@@ -397,6 +399,7 @@ export const services: Service[] = [
     metaDescription:
       "Kitchen and appliance cleaning across Sharjah & Ajman from AED 129. Oven, hob and fridge degreasing for a hygienic, sparkling kitchen by insured pros. Book on WhatsApp.",
   },
+  /* Temporarily removed at client's request — AC & Duct Cleaning
   {
     slug: "ac-duct-cleaning",
     name: "AC & Duct Cleaning",
@@ -447,6 +450,7 @@ export const services: Service[] = [
     metaDescription:
       "AC and duct cleaning across Sharjah & Ajman from AED 199. Remove dust, mould and allergens to improve air quality and cooling efficiency. Book on WhatsApp.",
   },
+  */
   {
     slug: "laundry-ironing",
     name: "Laundry & Ironing",
