@@ -12,7 +12,7 @@ const highlights = [
 
 export function Hero() {
   return (
-    <section className="relative isolate flex min-h-[85svh] w-full items-center overflow-hidden lg:min-h-[92vh]">
+    <section className="relative isolate flex min-h-[85svh] w-full items-center overflow-hidden lg:min-h-[88vh] xl:min-h-[78vh] xl:max-h-[820px] 2xl:max-h-[880px]">
       {/* Layer 1 — background photo (LCP element) */}
       <Image
         src="/images/hero-banner.png"
@@ -41,7 +41,7 @@ export function Hero() {
         </span>
 
         {/* Headline */}
-        <h1 className="max-w-3xl text-balance font-heading text-[clamp(2.75rem,5.5vw,5.5rem)] font-extrabold leading-[1.02] tracking-tight text-white [text-shadow:0_2px_24px_rgb(0_0_0/0.35)]">
+        <h1 className="max-w-3xl text-balance font-heading text-[clamp(2.5rem,4.5vw,4.25rem)] font-extrabold leading-[1.04] tracking-tight text-white [text-shadow:0_2px_24px_rgb(0_0_0/0.35)]">
           A <span className="text-gradient-bright">spotless</span> home, without
           lifting a finger
         </h1>
