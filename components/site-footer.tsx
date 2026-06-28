@@ -123,7 +123,7 @@ export function SiteFooter() {
           </p>
 
           <div className="flex items-center gap-4">
-            <nav aria-label="Legal" className="flex items-center gap-4">
+            {/* <nav aria-label="Legal" className="flex items-center gap-4">
               {legalLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -133,7 +133,7 @@ export function SiteFooter() {
                   {link.label}
                 </Link>
               ))}
-            </nav>
+            </nav> */}
             <div className="flex items-center gap-2">
               {siteConfig.social.instagram && (
                 <a
