@@ -27,7 +27,8 @@ export const siteConfig = {
    * Canonical site URL. Used by metadataBase and structured data. Replace with
    * the production domain once confirmed.
    */
-  url: "https://www.pristinehomeservices.ae",
+  // url: "https://www.pristinehomeservices.ae",
+  url: "https://premium-cleaning-website-pied.vercel.app",
 
   /** Contact details (NAP — Name, Address, Phone — must stay consistent site-wide). */
   contact: {
