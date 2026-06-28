@@ -1,15 +1,8 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { buttonVariants } from "@/components/ui/button"
 import { SectionHeading } from "@/components/section-heading"
+import { ServiceCard } from "@/components/services/service-card"
 import { services } from "@/lib/services"
 
 export function ServicesPreview() {
@@ -18,51 +11,16 @@ export function ServicesPreview() {
       <SectionHeading
         eyebrow="Our Services"
         title="Cleaning for every corner of your life"
-        description="From weekly home upkeep to deep cleans and commercial contracts, choose the service that fits — transparent pricing, no surprises."
+        description="From weekly home upkeep to deep cleans and commercial contracts, choose the service that fits — delivered by vetted, fully-insured professionals."
       />
 
       <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {services.map((service) => (
-          <Card
+        {services.map((service, index) => (
+          <ServiceCard
             key={service.slug}
-            className="group relative transition-shadow hover:shadow-md"
-          >
-            <CardHeader>
-              <div className="flex items-center justify-between">
-                <span className="flex size-11 items-center justify-center rounded-lg bg-gradient-primary text-primary-foreground shadow-sm transition-transform group-hover:scale-105">
-                  <service.icon className="size-5" />
-                </span>
-                {service.popular && (
-                  <Badge variant="secondary">Popular</Badge>
-                )}
-              </div>
-              <CardTitle className="mt-4 text-lg">
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="after:absolute after:inset-0 focus-visible:outline-none"
-                >
-                  {service.name}
-                </Link>
-              </CardTitle>
-              <CardDescription className="leading-relaxed">
-                {service.shortDescription}
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex items-center justify-between border-t border-border pt-4 text-sm">
-                <span className="text-muted-foreground">
-                  From{" "}
-                  <span className="font-semibold text-foreground">
-                    AED {service.priceFromAed}
-                  </span>
-                </span>
-                <span className="flex items-center gap-1 font-medium text-primary">
-                  Details
-                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-                </span>
-              </div>
-            </CardContent>
-          </Card>
+            service={service}
+            priority={index < 3}
+          />
         ))}
       </div>
 

@@ -11,14 +11,14 @@ import { siteConfig } from "@/lib/site-config"
 export const metadata: Metadata = {
   title: "Our Cleaning Services",
   description:
-    "Explore the full range of residential, specialised and commercial cleaning services from Pristine Home Services across Dubai, Abu Dhabi and Sharjah. Transparent pricing, vetted professionals.",
+    "Explore the full range of residential, specialised and commercial cleaning services from Pristine Home Services across Dubai, Abu Dhabi and Sharjah. Vetted, fully-insured professionals.",
   alternates: {
     canonical: "/services",
   },
   openGraph: {
     title: `Our Cleaning Services | ${siteConfig.name}`,
     description:
-      "Residential, specialised and commercial cleaning across the UAE — transparent pricing and vetted, insured professionals.",
+      "Residential, specialised and commercial cleaning across the UAE — delivered by vetted, fully-insured professionals.",
     url: `${siteConfig.url}/services`,
     type: "website",
   },
@@ -75,8 +75,7 @@ export default function ServicesPage() {
             <p className="max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
               From weekly home upkeep to deep cleans, upholstery care and
               commercial contracts, choose the service that fits — delivered by
-              vetted, fully-insured professionals with transparent pricing and
-              no surprises.
+              vetted, fully-insured professionals you can count on.
             </p>
             <ul className="mt-1 flex flex-wrap gap-x-6 gap-y-3 border-t border-border/70 pt-6">
               {assurances.map((item) => (
@@ -122,8 +121,12 @@ export default function ServicesPage() {
             </div>
 
             <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {group.items.map((service) => (
-                <ServiceCard key={service.slug} service={service} />
+              {group.items.map((service, itemIndex) => (
+                <ServiceCard
+                  key={service.slug}
+                  service={service}
+                  priority={index === 0 && itemIndex < 3}
+                />
               ))}
             </div>
           </section>
