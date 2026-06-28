@@ -37,8 +37,8 @@ export function AboutHero() {
 
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <div className="flex flex-col gap-6">
-            <span className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-              <span className="h-px w-8 bg-primary" />
+            <span className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-gradient-primary">
+              <span className="h-px w-8 bg-gradient-primary" />
               About {siteConfig.shortName}
             </span>
             <h1 className="text-balance font-heading text-[2.5rem] font-bold leading-[1.04] tracking-tight text-foreground sm:text-6xl">
@@ -56,7 +56,13 @@ export function AboutHero() {
                 href={whatsappLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={buttonVariants({ size: "lg" })}
+                // className={buttonVariants({ size: "lg" })}
+                className={buttonVariants({
+                  className:
+                    "bg-gradient-cta transition-opacity hover:opacity-90",
+                  size: "lg",
+                })}
+
               >
                 <MessageCircle data-icon="inline-start" />
                 Chat with our team

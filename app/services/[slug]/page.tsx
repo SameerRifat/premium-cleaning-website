@@ -153,8 +153,8 @@ export default async function ServiceDetailPage({
 
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             <div className="flex flex-col gap-6">
-              <span className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-                <span className="h-px w-8 bg-primary" />
+              <span className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-gradient-primary">
+                <span className="h-px w-8 bg-gradient-primary" />
                 {categoryLabel}
                 {service.popular && (
                   <span className="inline-flex items-center gap-1 rounded-full bg-accent px-2.5 py-0.5 text-[0.65rem] tracking-wide text-accent-foreground">
@@ -175,7 +175,11 @@ export default async function ServiceDetailPage({
                   href={whatsappLink(waMessage)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={buttonVariants({ size: "lg" })}
+                  // className={buttonVariants({ size: "lg" })}
+                  className={cn(
+                    buttonVariants({ size: "lg" }),
+                    "bg-gradient-cta transition-opacity hover:opacity-90"
+                  )}
                 >
                   <MessageCircle data-icon="inline-start" />
                   Book on WhatsApp
@@ -251,8 +255,8 @@ export default async function ServiceDetailPage({
       {/* What's included / not included */}
       <section className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="flex flex-col gap-3">
-          <span className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-            <span className="h-px w-8 bg-primary" />
+          <span className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-gradient-primary">
+            <span className="h-px w-8 bg-gradient-primary" />
             Scope of work
           </span>
           <h2 className="text-balance font-heading text-3xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-[2.5rem]">
@@ -270,17 +274,17 @@ export default async function ServiceDetailPage({
             {/* Accent top hairline + soft corner wash for depth */}
             <span
               aria-hidden="true"
-              className="absolute inset-x-0 top-0 h-1 bg-primary"
+              className="absolute inset-x-0 top-0 h-1 bg-gradient-primary"
             />
             <span
               aria-hidden="true"
-              className="pointer-events-none absolute -right-20 -top-20 size-56 rounded-full bg-primary/5 blur-3xl"
+              className="pointer-events-none absolute -right-20 -top-20 size-56 rounded-full bg-gradient-primary opacity-[0.08] blur-3xl"
             />
 
             <div className="relative flex flex-col gap-7 p-7 sm:p-9">
               <div className="flex items-start justify-between gap-4">
                 <div className="flex items-center gap-3.5">
-                  <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-md shadow-primary/30">
+                  <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-primary text-primary-foreground shadow-md shadow-primary/30">
                     <Check className="size-6" strokeWidth={2.5} />
                   </span>
                   <div className="flex flex-col">

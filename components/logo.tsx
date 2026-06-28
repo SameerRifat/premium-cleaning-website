@@ -19,7 +19,7 @@ export function Logo({
       )}
       aria-label={`${siteConfig.name} home`}
     >
-      <span className="flex size-9 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+      <span className="flex size-9 items-center justify-center rounded-lg bg-gradient-primary text-primary-foreground">
         <Sparkles className="size-5" />
       </span>
       <span className="flex flex-col leading-none">

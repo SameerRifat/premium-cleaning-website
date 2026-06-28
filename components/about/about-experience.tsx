@@ -52,7 +52,7 @@ export function AboutExperience() {
             </span>
 
             <div className="relative flex flex-col gap-4">
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-sm shadow-primary/20">
+              <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-primary text-primary-foreground shadow-sm shadow-primary/20">
                 <item.icon className="size-6" />
               </span>
               <div className="flex flex-col gap-1.5">

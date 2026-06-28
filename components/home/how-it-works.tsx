@@ -36,7 +36,7 @@ export function HowItWorks() {
           {steps.map((step, index) => (
             <li key={step.title} className="relative flex flex-col gap-4">
               <div className="flex items-center gap-4">
-                <span className="flex size-12 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+                <span className="flex size-12 items-center justify-center rounded-xl bg-gradient-primary text-primary-foreground">
                   <step.icon className="size-6" />
                 </span>
                 <span className="font-heading text-4xl font-bold text-border">

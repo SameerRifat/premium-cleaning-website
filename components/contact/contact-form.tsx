@@ -315,7 +315,7 @@ export function ContactForm() {
           <Button
             type="submit"
             size="lg"
-            className="h-12 w-full text-base"
+            className="h-12 w-full text-base bg-gradient-cta"
             disabled={status === "submitting"}
           >
             {status === "submitting" ? (

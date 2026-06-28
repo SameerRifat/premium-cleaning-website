@@ -18,8 +18,8 @@ export function AboutStats() {
       />
 
       <div className="relative mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-        <p className="mb-10 flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-          <span className="h-px w-8 bg-primary" />
+        <p className="mb-10 flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary-end">
+          <span className="h-px w-8 bg-primary-end" />
           Pristine by the numbers
         </p>
 

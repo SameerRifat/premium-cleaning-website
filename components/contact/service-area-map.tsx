@@ -33,8 +33,8 @@ export function ServiceAreaMap() {
         {/* Service-area confirmation */}
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-3">
-            <span className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-              <span className="h-px w-8 bg-primary" />
+            <span className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-gradient-primary">
+              <span className="h-px w-8 bg-gradient-primary" />
               Where we work
             </span>
             <h2 className="text-balance font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">

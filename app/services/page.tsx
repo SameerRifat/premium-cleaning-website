@@ -65,8 +65,8 @@ export default function ServicesPage() {
           </nav>
 
           <div className="flex max-w-3xl flex-col gap-6">
-            <span className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-              <span className="h-px w-8 bg-primary" />
+            <span className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-gradient-primary">
+              <span className="h-px w-8 bg-gradient-primary" />
               Our Services
             </span>
             <h1 className="text-balance font-heading text-[2.5rem] font-bold leading-[1.04] tracking-tight text-foreground sm:text-6xl">
@@ -102,11 +102,11 @@ export default function ServicesPage() {
             aria-labelledby={`category-${group.category}`}
           >
             <div className="flex flex-col gap-3">
-              <span className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+              <span className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-gradient-primary">
                 <span className="font-heading text-sm font-bold tabular-nums">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <span className="h-px w-8 bg-primary" />
+                <span className="h-px w-8 bg-gradient-primary" />
                 {group.items.length}{" "}
                 {group.items.length === 1 ? "service" : "services"}
               </span>
