@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import Link from "next/link"
 import { Menu, Phone, MessageCircle } from "lucide-react"
 import { Button, buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -14,7 +13,8 @@ import {
 } from "@/components/ui/sheet"
 import { Logo } from "@/components/logo"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { navItems } from "@/lib/navigation"
+import { DesktopNav } from "@/components/desktop-nav"
+import { MobileNav } from "@/components/mobile-nav"
 import { siteConfig, whatsappLink } from "@/lib/site-config"
 
 export function SiteHeader() {
@@ -25,20 +25,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Logo />
 
-        <nav
-          aria-label="Primary"
-          className="hidden items-center gap-1 lg:flex"
-        >
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+        <DesktopNav />
 
         <div className="flex items-center gap-2">
           <a
@@ -84,21 +71,7 @@ export function SiteHeader() {
                 <Logo />
               </SheetHeader>
 
-              <nav
-                aria-label="Mobile"
-                className="flex flex-col gap-1 p-4"
-              >
-                {navItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className="rounded-md px-3 py-2.5 text-base font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </nav>
+              <MobileNav onNavigate={() => setOpen(false)} />
 
               <div className="mt-auto flex flex-col gap-2 border-t border-border p-4">
                 <a
