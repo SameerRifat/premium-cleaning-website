@@ -166,7 +166,7 @@ export const faqCategories: FaqCategory[] = [
       {
         question: "Is there a minimum booking?",
         answer:
-          "Most home cleaning bookings have a small minimum number of hours so the job can be done properly. We'll confirm any minimum when you book, based on the service and your requirements, so you always know the full cost before confirming.",
+          "Yes — bookings start at a minimum of 3 hours so the job can be done properly. For larger homes or more involved cleans we'll recommend the right number of hours when you book, so you always know the full cost before confirming.",
       },
       {
         question: "What payment methods do you accept?",
@@ -183,7 +183,7 @@ export const faqCategories: FaqCategory[] = [
   {
     id: "service-areas",
     title: "Service areas",
-    description: "Where we work across the Emirates.",
+    description: "Where we work across Sharjah & Ajman.",
     icon: MapPin,
     faqs: [
       {

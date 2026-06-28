@@ -46,7 +46,7 @@ export function FaqPageJsonLd() {
       "@id": `${FAQ_URL}/#faqpage`,
       url: FAQ_URL,
       name: `Frequently Asked Questions — ${siteConfig.name}`,
-      description: `Answers to common questions about ${siteConfig.name}: booking, what's included, staff vetting, products, pricing and service areas across the UAE.`,
+      description: `Answers to common questions about ${siteConfig.name}: booking, what's included, staff vetting, products, pricing and service areas across Sharjah & Ajman.`,
       isPartOf: { "@id": `${siteConfig.url}/#website` },
       about: { "@id": BUSINESS_ID },
       mainEntity: allFaqs.map((faq) => ({

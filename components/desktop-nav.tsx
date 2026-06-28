@@ -72,8 +72,8 @@ function ServicesMegaMenu() {
             All Cleaning Services
           </span>
           <span className="text-sm leading-relaxed text-primary-foreground/85">
-            Residential, specialised and commercial cleaning across the UAE —
-            vetted professionals and transparent pricing.
+            Residential, specialised and commercial cleaning across Sharjah &
+            Ajman — vetted professionals and transparent pricing.
           </span>
         </div>
         <span className="inline-flex items-center gap-1.5 text-sm font-medium">

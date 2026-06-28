@@ -23,14 +23,14 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 const testimonials = [
   {
     name: "Aisha R.",
-    location: "Dubai Marina",
+    location: "Al Nuaimiya, Ajman",
     initials: "AR",
     quote:
       "Booked a deep clean before guests arrived and the team was incredible. Every corner sparkled and they were so professional. My go-to from now on.",
   },
   {
     name: "Daniel K.",
-    location: "Al Reem Island, Abu Dhabi",
+    location: "Al Khan, Sharjah",
     initials: "DK",
     quote:
       "We use them for our office twice a week. Reliable, thorough and easy to coordinate over WhatsApp. Highly recommend for any business.",
@@ -44,14 +44,14 @@ const testimonials = [
   },
   {
     name: "James W.",
-    location: "Jumeirah, Dubai",
+    location: "Al Rashidiya, Ajman",
     initials: "JW",
     quote:
       "Effortless from booking to finish. The crew arrived on time, paid attention to every detail, and left the apartment immaculate. Truly five-star service.",
   },
   {
     name: "Layla H.",
-    location: "Khalifa City, Abu Dhabi",
+    location: "Muwaileh, Sharjah",
     initials: "LH",
     quote:
       "I have used several cleaning companies over the years and none compare. Consistent quality, lovely staff and zero hassle. Worth every dirham.",
@@ -104,7 +104,7 @@ export function Testimonials() {
             align="left"
             eyebrow="Testimonials"
             title="Loved by homes and businesses"
-            description="Real feedback from across Dubai, Abu Dhabi and Sharjah — service our customers happily return to."
+            description="Real feedback from across Sharjah & Ajman — service our customers happily return to."
           />
           <div className="hidden shrink-0 items-center gap-3 lg:flex">
             <Button
@@ -134,9 +134,9 @@ export function Testimonials() {
           setApi={setApi}
           opts={{ loop: true, align: "start" }}
           plugins={[autoplay.current]}
-          className="mt-12"
+          className="mt-8"
         >
-          <CarouselContent className="-ml-6">
+          <CarouselContent className="-ml-6 py-4">
             {testimonials.map((t) => (
               <CarouselItem
                 key={t.name}
@@ -160,7 +160,7 @@ export function Testimonials() {
                   {/* Oversized decorative quotation watermark. */}
                   <Quote
                     aria-hidden
-                    className="absolute right-6 top-6 size-20 rotate-180 fill-primary/[0.06] text-transparent transition-colors duration-500 group-hover:fill-primary/10"
+                    className="absolute right-6 top-6 size-20 rotate-180 text-transparent transition-colors duration-500 fill-primary/10 group-hover:fill-primary/20"
                   />
 
                   {/* Content sits above all decorative layers. */}

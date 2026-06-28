@@ -8,14 +8,14 @@ import { siteConfig } from "@/lib/site-config"
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description:
-    "Answers to common questions about Pristine Home Services — booking and availability, what's included, staff vetting and safety, products, pricing and the areas we cover across Dubai, Abu Dhabi and Sharjah.",
+    "Answers to common questions about Pristine Home Services — booking and availability, what's included, staff vetting and safety, products, pricing and the areas we cover across Sharjah and Ajman.",
   alternates: {
     canonical: "/faq",
   },
   openGraph: {
     title: `Frequently Asked Questions | ${siteConfig.name}`,
     description:
-      "Booking, what's included, staff vetting, products, pricing and service areas — clear answers about cleaning with Pristine Home Services across the UAE.",
+      "Booking, what's included, staff vetting, products, pricing and service areas — clear answers about cleaning with Pristine Home Services across Sharjah & Ajman.",
     url: `${siteConfig.url}/faq`,
     type: "website",
   },

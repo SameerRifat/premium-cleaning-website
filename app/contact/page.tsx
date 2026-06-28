@@ -11,14 +11,14 @@ import { siteConfig } from "@/lib/site-config"
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Pristine Home Services for home and office cleaning across Dubai, Abu Dhabi, Sharjah and Ajman. Send the form, call, email, or message on WhatsApp — we reply within 1 hour during business hours.",
+    "Get in touch with Pristine Home Services for home and office cleaning across Sharjah and Ajman. Send the form, call, email, or message on WhatsApp — we reply within 1 hour during business hours.",
   alternates: {
     canonical: "/contact",
   },
   openGraph: {
     title: `Contact Us | ${siteConfig.name}`,
     description:
-      "Reach Pristine Home Services for fast cleaning quotes and bookings across the UAE. Form, phone, email or WhatsApp — replies within 1 hour during business hours.",
+      "Reach Pristine Home Services for fast cleaning quotes and bookings across Sharjah & Ajman. Form, phone, email or WhatsApp — replies within 1 hour during business hours.",
     url: `${siteConfig.url}/contact`,
     type: "website",
   },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `Contact Us | ${siteConfig.name}`,
     description:
-      "Reach Pristine Home Services for fast cleaning quotes and bookings across the UAE — form, phone, email or WhatsApp.",
+      "Reach Pristine Home Services for fast cleaning quotes and bookings across Sharjah & Ajman — form, phone, email or WhatsApp.",
   },
 }
 

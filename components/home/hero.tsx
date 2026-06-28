@@ -16,11 +16,12 @@ export function Hero() {
       {/* Layer 1 — background photo (LCP element) */}
       <Image
         src="/images/hero-banner.png"
-        alt="Professional cleaner polishing a glass surface in a bright, pristine luxury Dubai apartment"
+        alt="Professional cleaner polishing a glass surface in a bright, pristine luxury Sharjah apartment"
         fill
         priority
         sizes="100vw"
-        className="-z-20 object-cover object-[70%_center] lg:object-center"
+        className="-z-20 object-cover object-[100%_center] lg:object-center"
+        // className="-z-20 object-cover object-[70%_center] lg:object-center"
       />
 
       {/* Layer 2 — directional gradient overlay for legibility */}
@@ -37,7 +38,7 @@ export function Hero() {
         {/* Status pill */}
         <span className="mx-auto inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-gradient-cta px-4 py-1.5 text-xs font-medium text-white shadow-sm shadow-black/20 backdrop-blur-sm lg:mx-0">
           <span className="flex size-1.5 rounded-full bg-white" />
-          Trusted across Dubai, Abu Dhabi &amp; Sharjah
+          Trusted across Sharjah &amp; Ajman
         </span>
 
         {/* Headline */}

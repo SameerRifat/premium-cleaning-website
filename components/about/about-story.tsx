@@ -10,7 +10,7 @@ export function AboutStory() {
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-border shadow-2xl shadow-black/10">
             <Image
               src="/images/about/story.png"
-              alt="A Pristine cleaner wiping a kitchen counter to a streak-free shine in a modern Dubai home"
+              alt="A Pristine cleaner wiping a kitchen counter to a streak-free shine in a modern Sharjah home"
               fill
               sizes="(min-width: 1024px) 36rem, 100vw"
               className="object-cover"
@@ -32,7 +32,7 @@ export function AboutStory() {
             Our Story
           </span>
           <h2 className="text-balance font-heading text-3xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-[2.75rem]">
-            Built in Dubai, to fix a broken experience
+            Built in Sharjah, to fix a broken experience
           </h2>
           <div className="flex flex-col gap-4 text-pretty leading-relaxed text-muted-foreground">
             <p>
@@ -46,7 +46,7 @@ export function AboutStory() {
               company where every cleaner is interviewed, background-checked and
               trained, every booking is insured, and the same trusted
               professional returns to your home each time. We started with a
-              handful of families in Business Bay and grew through one thing:
+              handful of families in Al Majaz and grew through one thing:
               clients telling their neighbours.
             </p>
           </div>
@@ -67,8 +67,8 @@ export function AboutStory() {
           </blockquote>
 
           <p className="text-pretty leading-relaxed text-muted-foreground">
-            Today we serve homes and offices across Dubai, Abu Dhabi, Sharjah and
-            Ajman — and that founding promise hasn&apos;t changed.
+            Today we serve homes and offices across Sharjah and Ajman — and that
+            founding promise hasn&apos;t changed.
           </p>
         </div>
       </div>

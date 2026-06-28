@@ -94,7 +94,7 @@ export function AboutHero() {
             <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-border shadow-2xl shadow-primary/10">
               <Image
                 src="/images/about/team-group.png"
-                alt="The Pristine Home Services team in matching uniforms inside a bright, freshly cleaned Dubai apartment"
+                alt="The Pristine Home Services team in matching uniforms inside a bright, freshly cleaned Sharjah apartment"
                 fill
                 priority
                 sizes="(min-width: 1024px) 36rem, 100vw"

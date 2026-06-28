@@ -19,7 +19,7 @@ export function ContactChannels() {
         href={whatsappLink()}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center gap-4 rounded-2xl bg-primary p-5 text-primary-foreground shadow-lg shadow-primary/20 transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        className="group flex items-center gap-4 rounded-2xl bg-primary-end p-5 text-primary-foreground shadow-lg shadow-primary/20 transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
       >
         <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary-foreground/15">
           <MessageCircle className="size-6" />
