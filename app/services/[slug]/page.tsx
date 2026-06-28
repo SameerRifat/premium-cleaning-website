@@ -264,61 +264,106 @@ export default async function ServiceDetailPage({
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
-          {/* Included */}
-          <div className="flex flex-col gap-6 rounded-3xl border border-border bg-card p-7 shadow-sm shadow-black/5 sm:p-9">
-            <div className="flex items-center gap-3">
-              <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-sm shadow-primary/20">
-                <Check className="size-6" />
-              </span>
-              <h3 className="font-heading text-xl font-semibold text-foreground">
-                What&apos;s included
-              </h3>
-            </div>
-            <ul className="flex flex-col">
-              {service.whatsIncluded.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-3 border-t border-border py-3.5 first:border-t-0 first:pt-0 text-sm"
-                >
-                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <Check className="size-3.5" />
+        <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-[1.55fr_1fr] lg:items-stretch">
+          {/* Included — the hero of the comparison */}
+          <div className="relative flex flex-col overflow-hidden rounded-[1.75rem] border border-border bg-card shadow-xl shadow-primary/5">
+            {/* Accent top hairline + soft corner wash for depth */}
+            <span
+              aria-hidden="true"
+              className="absolute inset-x-0 top-0 h-1 bg-primary"
+            />
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute -right-20 -top-20 size-56 rounded-full bg-primary/5 blur-3xl"
+            />
+
+            <div className="relative flex flex-col gap-7 p-7 sm:p-9">
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex items-center gap-3.5">
+                  <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-md shadow-primary/30">
+                    <Check className="size-6" strokeWidth={2.5} />
                   </span>
-                  <span className="leading-relaxed text-foreground">{item}</span>
-                </li>
-              ))}
-            </ul>
+                  <div className="flex flex-col">
+                    <h3 className="font-heading text-xl font-bold tracking-tight text-foreground">
+                      What&apos;s included
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      Covered as standard on every booking
+                    </p>
+                  </div>
+                </div>
+                <span className="hidden shrink-0 items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary sm:inline-flex">
+                  {service.whatsIncluded.length} inclusions
+                </span>
+              </div>
+
+              <ul className="grid grid-cols-1 gap-x-10 sm:grid-cols-2">
+                {service.whatsIncluded.map((item, index) => (
+                  <li
+                    key={item}
+                    className="group flex items-center gap-3 border-t border-border/70 py-3.5 first:border-t-0 sm:[&:nth-child(2)]:border-t-0"
+                  >
+                    <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors duration-200 group-hover:bg-primary group-hover:text-primary-foreground">
+                      <Check className="size-3.5" strokeWidth={2.5} />
+                    </span>
+                    <span className="text-sm font-medium leading-relaxed text-foreground">
+                      {item}
+                    </span>
+                    <span className="sr-only">{`Inclusion ${index + 1}`}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          {/* Not included */}
-          <div className="flex flex-col gap-6 rounded-3xl border border-border bg-secondary/50 p-7 sm:p-9">
-            <div className="flex items-center gap-3">
-              <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-card text-muted-foreground ring-1 ring-border">
+          {/* Not included — quieter, secondary panel */}
+          <div className="flex h-full flex-col rounded-[1.75rem] border border-border bg-secondary/40 p-7 sm:p-8">
+            <div className="flex items-center gap-3.5">
+              <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl border border-border bg-card text-muted-foreground">
                 <X className="size-6" />
               </span>
-              <h3 className="font-heading text-xl font-semibold text-foreground">
-                Not included
-              </h3>
+              <div className="flex flex-col">
+                <h3 className="font-heading text-xl font-bold tracking-tight text-foreground">
+                  Not included
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Outside this service&apos;s scope
+                </p>
+              </div>
             </div>
-            <ul className="flex flex-col">
+
+            <ul className="mt-6 flex flex-col">
               {service.notIncluded.map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 border-t border-border py-3.5 first:border-t-0 first:pt-0 text-sm"
+                  className="flex items-start gap-3 border-t border-dashed border-border py-3 first:border-t-0 first:pt-0"
                 >
-                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground">
-                    <X className="size-3.5" />
-                  </span>
-                  <span className="leading-relaxed text-muted-foreground">
+                  <X className="mt-0.5 size-4 shrink-0 text-muted-foreground/60" />
+                  <span className="text-sm leading-relaxed text-muted-foreground">
                     {item}
                   </span>
                 </li>
               ))}
             </ul>
-            <p className="mt-auto text-pretty text-sm leading-relaxed text-muted-foreground">
-              Need something on this list? Message us — we&apos;ll point you to
-              the right service or arrange it as an add-on.
-            </p>
+
+            <div className="mt-auto pt-6">
+              <div className="rounded-2xl border border-border bg-card p-4 shadow-sm shadow-black/5">
+                <p className="text-pretty text-sm leading-relaxed text-muted-foreground">
+                  Need something on this list?{" "}
+                  <a
+                    href={whatsappLink(
+                      `Hi ${siteConfig.name}, I'd like to add an extra to my "${service.name}" booking. Can you help?`,
+                    )}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-primary underline-offset-4 hover:underline"
+                  >
+                    Message us
+                  </a>{" "}
+                  and we&apos;ll arrange it as an add-on.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
