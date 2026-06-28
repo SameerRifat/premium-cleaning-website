@@ -11,7 +11,6 @@ import {
   ShieldCheck,
   Sparkles,
   Star,
-  Tag,
   UserCheck,
   Users,
   X,
@@ -86,7 +85,6 @@ export default async function ServiceDetailPage({
   const waMessage = `Hi ${siteConfig.name}, I'd like to book "${service.name}". Could you share availability and pricing?`
 
   const stats = [
-    { icon: Tag, label: "From", value: `AED ${service.priceFromAed}` },
     { icon: Clock, label: "Duration", value: service.duration },
     { icon: Users, label: "Ideal for", value: service.idealFor },
   ]
@@ -229,7 +227,7 @@ export default async function ServiceDetailPage({
           </div>
 
           {/* Stat strip */}
-          <dl className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-3">
+          <dl className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2">
             {stats.map((stat) => (
               <div
                 key={stat.label}
