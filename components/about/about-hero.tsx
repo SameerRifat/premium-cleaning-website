@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { MessageCircle, Phone, ShieldCheck, Leaf, Clock } from "lucide-react"
+import { MessageCircle, Phone, ShieldCheck, Leaf, Clock, Star } from "lucide-react"
 import { buttonVariants } from "@/components/ui/button"
 import { siteConfig, whatsappLink } from "@/lib/site-config"
 
@@ -12,37 +12,46 @@ const highlights = [
 
 export function AboutHero() {
   return (
-    <section className="border-b border-border bg-secondary/40">
-      <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
+    <section className="relative overflow-hidden border-b border-border bg-secondary/40">
+      {/* Soft radial wash for depth without introducing new colors */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60rem_40rem_at_75%_-10%,oklch(0.93_0.035_190/0.7),transparent)]"
+      />
+
+      <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-20">
         {/* Breadcrumb */}
-        <nav aria-label="Breadcrumb" className="mb-6">
+        <nav aria-label="Breadcrumb" className="mb-10">
           <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
             <li>
               <Link href="/" className="transition-colors hover:text-foreground">
                 Home
               </Link>
             </li>
-            <li aria-hidden="true">/</li>
+            <li aria-hidden="true" className="text-border">
+              /
+            </li>
             <li className="font-medium text-foreground">About</li>
           </ol>
         </nav>
 
-        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12">
-          <div className="flex flex-col gap-5">
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+          <div className="flex flex-col gap-6">
+            <span className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+              <span className="h-px w-8 bg-primary" />
               About {siteConfig.shortName}
             </span>
-            <h1 className="text-balance font-heading text-4xl font-bold leading-[1.08] tracking-tight text-foreground sm:text-5xl">
+            <h1 className="text-balance font-heading text-[2.5rem] font-bold leading-[1.04] tracking-tight text-foreground sm:text-6xl">
               The trusted name in UAE home cleaning
             </h1>
-            <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
+            <p className="max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
               {siteConfig.name} is a licensed, fully-insured cleaning company
               built for UAE homes and offices. We pair vetted, background-checked
               professionals with family-safe products and a standard of care you
               can actually rely on — clean after clean.
             </p>
 
-            <div className="flex flex-col gap-3 sm:flex-row">
+            <div className="mt-1 flex flex-col gap-3 sm:flex-row">
               <a
                 href={whatsappLink()}
                 target="_blank"
@@ -61,7 +70,7 @@ export function AboutHero() {
               </a>
             </div>
 
-            <ul className="flex flex-wrap gap-x-6 gap-y-2 pt-1">
+            <ul className="mt-2 flex flex-wrap gap-x-6 gap-y-3 border-t border-border/70 pt-6">
               {highlights.map((item) => (
                 <li
                   key={item.label}
@@ -74,15 +83,34 @@ export function AboutHero() {
             </ul>
           </div>
 
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border shadow-xl shadow-black/5">
-            <Image
-              src="/images/about/team-group.png"
-              alt="The Pristine Home Services team in matching uniforms inside a bright, freshly cleaned Dubai apartment"
-              fill
-              priority
-              sizes="(min-width: 1024px) 36rem, 100vw"
-              className="object-cover"
-            />
+          {/* Layered image with floating credibility card for depth */}
+          <div className="relative">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-border shadow-2xl shadow-primary/10">
+              <Image
+                src="/images/about/team-group.png"
+                alt="The Pristine Home Services team in matching uniforms inside a bright, freshly cleaned Dubai apartment"
+                fill
+                priority
+                sizes="(min-width: 1024px) 36rem, 100vw"
+                className="object-cover"
+              />
+            </div>
+
+            <div className="absolute -bottom-5 left-4 flex items-center gap-3 rounded-2xl border border-border bg-card/95 p-4 shadow-xl shadow-black/10 backdrop-blur-sm sm:left-6">
+              <div className="flex flex-col">
+                <div className="flex items-center gap-0.5 text-primary">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="size-3.5 fill-current" />
+                  ))}
+                </div>
+                <p className="mt-1 text-sm font-semibold text-card-foreground">
+                  Rated by UAE families
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  98% would book us again
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

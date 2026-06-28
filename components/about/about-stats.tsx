@@ -7,26 +7,49 @@ const stats = [
 
 export function AboutStats() {
   return (
-    <section aria-label="Pristine by the numbers" className="border-b border-border">
-      <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <dl className="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="flex flex-col items-center gap-1.5 rounded-2xl border border-border bg-card p-6 text-center"
-            >
-              <dt className="sr-only">{stat.label}</dt>
-              <dd className="font-heading text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-                {stat.value}
-              </dd>
-              <p
-                aria-hidden="true"
-                className="text-sm font-medium leading-relaxed text-muted-foreground"
+    <section
+      aria-label="Pristine by the numbers"
+      className="relative overflow-hidden bg-ink text-ink-foreground"
+    >
+      {/* Subtle depth wash */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(50rem_30rem_at_15%_120%,oklch(0.58_0.094_195/0.28),transparent)]"
+      />
+
+      <div className="relative mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+        <p className="mb-10 flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+          <span className="h-px w-8 bg-primary" />
+          Pristine by the numbers
+        </p>
+
+        <dl className="grid grid-cols-2 gap-y-10 sm:gap-y-12 lg:grid-cols-4">
+          {stats.map((stat, index) => {
+            // Center divider on mobile (2-col), full dividers on desktop (4-col).
+            const divider =
+              index === 1 || index === 3
+                ? "border-l border-ink-foreground/15"
+                : index === 2
+                  ? "lg:border-l lg:border-ink-foreground/15"
+                  : ""
+            return (
+              <div
+                key={stat.label}
+                className={`flex flex-col gap-2 px-3 sm:px-6 lg:px-8 ${divider}`}
               >
-                {stat.label}
-              </p>
-            </div>
-          ))}
+                <dt className="sr-only">{stat.label}</dt>
+                <dd className="font-heading text-5xl font-bold leading-none tracking-tight text-ink-foreground sm:text-6xl">
+                  {stat.value}
+                </dd>
+                <p
+                  aria-hidden="true"
+                  className="text-sm font-medium leading-relaxed text-ink-muted"
+                >
+                  {stat.label}
+                </p>
+              </div>
+            )
+          })}
         </dl>
       </div>
     </section>

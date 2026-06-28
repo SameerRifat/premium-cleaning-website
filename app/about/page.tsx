@@ -41,9 +41,7 @@ export default function AboutPage() {
       <AboutCredentials />
       <AboutExperience />
       <AboutTeam />
-      <div className="border-t border-border pt-2">
-        <ContactCta />
-      </div>
+      <ContactCta />
     </>
   )
 }
