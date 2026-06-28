@@ -41,10 +41,10 @@ export function ServiceAreas() {
 
       <div className="mt-10 flex justify-center">
         <Link
-          href="/service-areas"
+          href="/contact"
           className={buttonVariants({ variant: "outline", size: "lg" })}
         >
-          See all areas we cover
+          Check if we cover your area
           <ArrowRight data-icon="inline-end" />
         </Link>
       </div>
