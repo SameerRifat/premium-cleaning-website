@@ -8,12 +8,15 @@ import {
   Clock,
   MessageCircle,
   Phone,
+  ShieldCheck,
+  Sparkles,
+  Star,
   Tag,
+  UserCheck,
   Users,
   X,
 } from "lucide-react"
 import { buttonVariants } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import { SectionHeading } from "@/components/section-heading"
 import { ServiceCard } from "@/components/services/service-card"
 import { FaqAccordion } from "@/components/services/faq-accordion"
@@ -88,22 +91,51 @@ export default async function ServiceDetailPage({
     { icon: Users, label: "Ideal for", value: service.idealFor },
   ]
 
+  const assurances = [
+    {
+      icon: ShieldCheck,
+      title: "Fully insured bookings",
+      description:
+        "Every job is covered for liability and accidental damage, so inviting our team in carries zero risk to you.",
+    },
+    {
+      icon: UserCheck,
+      title: "Background-checked staff",
+      description:
+        "Each professional is interviewed, identity-verified and trained to our checklist before attending any job.",
+    },
+    {
+      icon: Sparkles,
+      title: "Satisfaction guarantee",
+      description:
+        "Not happy with an area? Tell us within 24 hours and we'll return to re-clean it at no extra cost.",
+    },
+  ]
+
   return (
     <>
       <ServiceDetailJsonLd service={service} />
 
       {/* Hero */}
-      <section className="border-b border-border bg-secondary/40">
+      <section className="relative overflow-hidden border-b border-border bg-secondary/40">
+        {/* Soft radial wash for depth without introducing new colors */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60rem_40rem_at_78%_-10%,oklch(0.93_0.035_190/0.7),transparent)]"
+        />
+
         <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
           {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb" className="mb-6">
+          <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
               <li>
                 <Link href="/" className="transition-colors hover:text-foreground">
                   Home
                 </Link>
               </li>
-              <li aria-hidden="true">/</li>
+              <li aria-hidden="true" className="text-border">
+                /
+              </li>
               <li>
                 <Link
                   href="/services"
@@ -112,25 +144,33 @@ export default async function ServiceDetailPage({
                   Services
                 </Link>
               </li>
-              <li aria-hidden="true">/</li>
+              <li aria-hidden="true" className="text-border">
+                /
+              </li>
               <li className="font-medium text-foreground">{service.name}</li>
             </ol>
           </nav>
 
-          <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12">
-            <div className="flex flex-col gap-5">
-              <div className="flex items-center gap-3">
-                <Badge variant="secondary">{categoryLabel}</Badge>
-                {service.popular && <Badge>Popular</Badge>}
-              </div>
-              <h1 className="text-balance font-heading text-4xl font-bold leading-[1.08] tracking-tight text-foreground sm:text-5xl">
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+            <div className="flex flex-col gap-6">
+              <span className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+                <span className="h-px w-8 bg-primary" />
+                {categoryLabel}
+                {service.popular && (
+                  <span className="inline-flex items-center gap-1 rounded-full bg-accent px-2.5 py-0.5 text-[0.65rem] tracking-wide text-accent-foreground">
+                    <Sparkles className="size-3" />
+                    Popular
+                  </span>
+                )}
+              </span>
+              <h1 className="text-balance font-heading text-[2.5rem] font-bold leading-[1.04] tracking-tight text-foreground sm:text-6xl">
                 {service.name}
               </h1>
-              <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
+              <p className="max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
                 {service.longDescription}
               </p>
 
-              <div className="flex flex-col gap-3 sm:flex-row">
+              <div className="mt-1 flex flex-col gap-3 sm:flex-row">
                 <a
                   href={whatsappLink(waMessage)}
                   target="_blank"
@@ -150,33 +190,55 @@ export default async function ServiceDetailPage({
               </div>
             </div>
 
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border shadow-xl shadow-black/5">
-              <Image
-                src={service.image.src || "/placeholder.svg"}
-                alt={service.image.alt}
-                fill
-                priority
-                sizes="(min-width: 1024px) 36rem, 100vw"
-                className="object-cover"
-              />
+            {/* Layered image with floating credibility card for depth */}
+            <div className="relative">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-border shadow-2xl shadow-primary/10">
+                <Image
+                  src={service.image.src || "/placeholder.svg"}
+                  alt={service.image.alt}
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 32rem, 100vw"
+                  className="object-cover"
+                />
+              </div>
+
+              <div className="absolute -bottom-5 left-4 flex items-center gap-3 rounded-2xl border border-border bg-card/95 p-4 shadow-xl shadow-black/10 backdrop-blur-sm sm:left-6">
+                <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+                  <ShieldCheck className="size-5" />
+                </span>
+                <div className="flex flex-col">
+                  <div className="flex items-center gap-0.5 text-primary">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} className="size-3 fill-current" />
+                    ))}
+                  </div>
+                  <p className="mt-0.5 text-sm font-semibold text-card-foreground">
+                    Fully insured &amp; vetted
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    Trusted by UAE households
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Stat strip */}
-          <dl className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
+          <dl className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-3">
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="flex items-start gap-3 rounded-xl border border-border bg-card p-4"
+                className="flex items-center gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm shadow-black/5"
               >
-                <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary ring-1 ring-border">
                   <stat.icon className="size-5" />
                 </span>
                 <div className="flex flex-col">
-                  <dt className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                  <dt className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">
                     {stat.label}
                   </dt>
-                  <dd className="font-heading text-sm font-semibold text-foreground">
+                  <dd className="mt-0.5 font-heading text-base font-bold text-foreground">
                     {stat.value}
                   </dd>
                 </div>
@@ -187,15 +249,38 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* What's included / not included */}
-      <section className="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
-          <div className="flex flex-col gap-5">
-            <h2 className="font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-              What&apos;s included
-            </h2>
-            <ul className="flex flex-col gap-3">
+      <section className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+        <div className="flex flex-col gap-3">
+          <span className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+            <span className="h-px w-8 bg-primary" />
+            Scope of work
+          </span>
+          <h2 className="text-balance font-heading text-3xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-[2.5rem]">
+            Exactly what you get — and what you don&apos;t
+          </h2>
+          <p className="max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
+            No vague promises. Here is the precise scope of this service so you
+            know what to expect before you book.
+          </p>
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
+          {/* Included */}
+          <div className="flex flex-col gap-6 rounded-3xl border border-border bg-card p-7 shadow-sm shadow-black/5 sm:p-9">
+            <div className="flex items-center gap-3">
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-sm shadow-primary/20">
+                <Check className="size-6" />
+              </span>
+              <h3 className="font-heading text-xl font-semibold text-foreground">
+                What&apos;s included
+              </h3>
+            </div>
+            <ul className="flex flex-col">
               {service.whatsIncluded.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm">
+                <li
+                  key={item}
+                  className="flex items-start gap-3 border-t border-border py-3.5 first:border-t-0 first:pt-0 text-sm"
+                >
                   <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
                     <Check className="size-3.5" />
                   </span>
@@ -205,17 +290,22 @@ export default async function ServiceDetailPage({
             </ul>
           </div>
 
-          <div className="flex flex-col gap-5">
-            <h2 className="font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-              Not included
-            </h2>
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              Full transparency on scope — these fall outside this service, but
-              ask us and we&apos;ll point you to the right option.
-            </p>
-            <ul className="flex flex-col gap-3">
+          {/* Not included */}
+          <div className="flex flex-col gap-6 rounded-3xl border border-border bg-secondary/50 p-7 sm:p-9">
+            <div className="flex items-center gap-3">
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-card text-muted-foreground ring-1 ring-border">
+                <X className="size-6" />
+              </span>
+              <h3 className="font-heading text-xl font-semibold text-foreground">
+                Not included
+              </h3>
+            </div>
+            <ul className="flex flex-col">
               {service.notIncluded.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm">
+                <li
+                  key={item}
+                  className="flex items-start gap-3 border-t border-border py-3.5 first:border-t-0 first:pt-0 text-sm"
+                >
                   <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground">
                     <X className="size-3.5" />
                   </span>
@@ -225,6 +315,40 @@ export default async function ServiceDetailPage({
                 </li>
               ))}
             </ul>
+            <p className="mt-auto text-pretty text-sm leading-relaxed text-muted-foreground">
+              Need something on this list? Message us — we&apos;ll point you to
+              the right service or arrange it as an add-on.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Booking assurance — high-contrast trust moment */}
+      <section
+        aria-label="Why book with Pristine"
+        className="relative overflow-hidden bg-ink text-ink-foreground"
+      >
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(50rem_30rem_at_85%_120%,oklch(0.58_0.094_195/0.28),transparent)]"
+        />
+        <div className="relative mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-3">
+            {assurances.map((item) => (
+              <div key={item.title} className="flex items-start gap-4">
+                <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-ink-foreground/10 text-primary ring-1 ring-ink-foreground/15">
+                  <item.icon className="size-6" />
+                </span>
+                <div className="flex flex-col gap-1">
+                  <h3 className="font-heading text-base font-semibold text-ink-foreground">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-ink-muted">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

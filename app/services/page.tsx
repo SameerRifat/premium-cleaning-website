@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { ArrowRight, ShieldCheck, Clock, Leaf } from "lucide-react"
+import { ShieldCheck, Clock, Leaf } from "lucide-react"
 import { SectionHeading } from "@/components/section-heading"
 import { ServiceCard } from "@/components/services/service-card"
 import { ServicesIndexJsonLd } from "@/components/services/structured-data"
@@ -38,10 +38,16 @@ export default function ServicesPage() {
       <ServicesIndexJsonLd services={services} />
 
       {/* Page intro */}
-      <section className="border-b border-border bg-secondary/40">
+      <section className="relative overflow-hidden border-b border-border bg-secondary/40">
+        {/* Soft radial wash for depth without introducing new colors */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60rem_40rem_at_80%_-15%,oklch(0.93_0.035_190/0.7),transparent)]"
+        />
+
         <div className="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
           {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb" className="mb-6">
+          <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center gap-2 text-sm text-muted-foreground">
               <li>
                 <Link
@@ -51,25 +57,28 @@ export default function ServicesPage() {
                   Home
                 </Link>
               </li>
-              <li aria-hidden="true">/</li>
+              <li aria-hidden="true" className="text-border">
+                /
+              </li>
               <li className="font-medium text-foreground">Services</li>
             </ol>
           </nav>
 
-          <div className="flex max-w-3xl flex-col gap-5">
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+          <div className="flex max-w-3xl flex-col gap-6">
+            <span className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+              <span className="h-px w-8 bg-primary" />
               Our Services
             </span>
-            <h1 className="text-balance font-heading text-4xl font-bold leading-[1.08] tracking-tight text-foreground sm:text-5xl">
+            <h1 className="text-balance font-heading text-[2.5rem] font-bold leading-[1.04] tracking-tight text-foreground sm:text-6xl">
               Cleaning for every corner of your life
             </h1>
-            <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
+            <p className="max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
               From weekly home upkeep to deep cleans, upholstery care and
               commercial contracts, choose the service that fits — delivered by
               vetted, fully-insured professionals with transparent pricing and
               no surprises.
             </p>
-            <ul className="flex flex-wrap gap-x-6 gap-y-2 pt-1">
+            <ul className="mt-1 flex flex-wrap gap-x-6 gap-y-3 border-t border-border/70 pt-6">
               {assurances.map((item) => (
                 <li
                   key={item.label}
@@ -93,22 +102,26 @@ export default function ServicesPage() {
             aria-labelledby={`category-${group.category}`}
           >
             <div className="flex flex-col gap-3">
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-                {String(index + 1).padStart(2, "0")} — {group.items.length}{" "}
+              <span className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+                <span className="font-heading text-sm font-bold tabular-nums">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="h-px w-8 bg-primary" />
+                {group.items.length}{" "}
                 {group.items.length === 1 ? "service" : "services"}
               </span>
               <h2
                 id={`category-${group.category}`}
-                className="text-balance font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
+                className="text-balance font-heading text-3xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-[2.5rem]"
               >
                 {group.label}
               </h2>
-              <p className="max-w-2xl text-pretty leading-relaxed text-muted-foreground">
+              <p className="max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
                 {group.description}
               </p>
             </div>
 
-            <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {group.items.map((service) => (
                 <ServiceCard key={service.slug} service={service} />
               ))}
