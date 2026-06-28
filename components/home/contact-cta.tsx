@@ -7,7 +7,7 @@ import { siteConfig, whatsappLink } from "@/lib/site-config"
 export function ContactCta() {
   return (
     <section className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <div className="relative overflow-hidden rounded-3xl bg-primary text-primary-foreground">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-cta text-primary-foreground">
         <div className="grid grid-cols-1 items-center gap-8 p-8 sm:p-12 lg:grid-cols-2 lg:p-16">
           <div className="flex flex-col gap-5">
             <h2 className="text-balance font-heading text-3xl font-bold tracking-tight sm:text-4xl">
