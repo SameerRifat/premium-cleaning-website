@@ -7,6 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import type { ServiceFaq } from "@/lib/services"
+import { Emphasize } from "@/lib/keywords"
 
 /**
  * Client-only FAQ accordion. The interactivity boundary is kept narrow — the
@@ -21,7 +22,7 @@ export function FaqAccordion({ faqs }: { faqs: ServiceFaq[] }) {
             {faq.question}
           </AccordionTrigger>
           <AccordionContent className="leading-relaxed text-muted-foreground">
-            <p>{faq.answer}</p>
+            <p><Emphasize>{faq.answer}</Emphasize></p>
           </AccordionContent>
         </AccordionItem>
       ))}

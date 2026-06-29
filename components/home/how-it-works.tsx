@@ -1,5 +1,6 @@
 import { CalendarCheck, Sparkles, Smile } from "lucide-react"
 import { SectionHeading } from "@/components/section-heading"
+import { Emphasize } from "@/lib/keywords"
 
 const steps = [
   {
@@ -48,7 +49,7 @@ export function HowItWorks() {
                   {step.title}
                 </h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">
-                  {step.description}
+                  <Emphasize>{step.description}</Emphasize>
                 </p>
               </div>
             </li>

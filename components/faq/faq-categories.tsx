@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils"
 import { FaqAccordion } from "@/components/services/faq-accordion"
 import { faqCategories } from "@/lib/faqs"
 import { whatsappLink } from "@/lib/site-config"
+import { Emphasize } from "@/lib/keywords"
 
 /**
  * FAQ body: a sticky in-page category nav alongside the grouped accordion
@@ -59,7 +60,7 @@ export function FaqCategories() {
                   {category.title}
                 </h2>
                 <p className="text-pretty leading-relaxed text-muted-foreground">
-                  {category.description}
+                  <Emphasize>{category.description}</Emphasize>
                 </p>
               </div>
 

@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils"
+import { Emphasize } from "@/lib/keywords"
 
 export function SectionHeading({
   eyebrow,
@@ -36,7 +37,7 @@ export function SectionHeading({
             align === "center" ? "max-w-2xl" : "max-w-xl",
           )}
         >
-          {description}
+          <Emphasize>{description}</Emphasize>
         </p>
       )}
     </div>

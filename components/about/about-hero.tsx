@@ -3,6 +3,7 @@ import Link from "next/link"
 import { MessageCircle, Phone, ShieldCheck, Leaf, Clock, Star } from "lucide-react"
 import { buttonVariants } from "@/components/ui/button"
 import { siteConfig, whatsappLink } from "@/lib/site-config"
+import { Emphasize } from "@/lib/keywords"
 
 const highlights = [
   { icon: ShieldCheck, label: "Licensed & fully insured" },
@@ -45,10 +46,13 @@ export function AboutHero() {
               The trusted name in UAE home cleaning
             </h1>
             <p className="max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
-              {siteConfig.name} is a licensed, fully-insured cleaning company
-              built for UAE homes and offices. We pair vetted, background-checked
-              professionals with family-safe products and a standard of care you
-              can actually rely on — clean after clean.
+              {siteConfig.name}{" "}
+              <Emphasize>
+                is a licensed, fully-insured cleaning company built for UAE
+                homes and offices. We pair vetted, background-checked
+                professionals with family-safe products and a standard of care
+                you can actually rely on — clean after clean.
+              </Emphasize>
             </p>
 
             <div className="mt-1 flex flex-col gap-3 sm:flex-row">

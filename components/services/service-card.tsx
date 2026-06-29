@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowUpRight, Clock } from "lucide-react"
 import { categoryMeta, type Service } from "@/lib/services"
+import { Emphasize } from "@/lib/keywords"
 
 /**
  * Editorial, photo-forward service card (Server Component — all motion is CSS).
@@ -66,7 +67,7 @@ export function ServiceCard({ service, priority = false }: ServiceCardProps) {
           <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-out group-hover:grid-rows-[1fr]">
             <div className="overflow-hidden">
               <p className="pt-2 text-sm leading-relaxed text-white/80">
-                {service.shortDescription}
+                <Emphasize>{service.shortDescription}</Emphasize>
               </p>
             </div>
           </div>

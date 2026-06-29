@@ -4,6 +4,7 @@ import { Logo } from "@/components/logo"
 import { siteConfig } from "@/lib/site-config"
 import { services } from "@/lib/services"
 import { navItems } from "@/lib/navigation"
+import { Emphasize } from "@/lib/keywords"
 
 const legalLinks = [
   { label: "Privacy Policy", href: "/privacy" },
@@ -22,7 +23,7 @@ export function SiteFooter() {
           <div className="flex flex-col gap-4">
             <Logo />
             <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-              {siteConfig.description}
+              <Emphasize>{siteConfig.description}</Emphasize>
             </p>
             <ul className="flex flex-col gap-2 text-sm">
               <li className="flex items-start gap-2.5">

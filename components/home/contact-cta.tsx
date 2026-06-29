@@ -3,6 +3,7 @@ import { MessageCircle, Phone } from "lucide-react"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { siteConfig, whatsappLink } from "@/lib/site-config"
+import { Emphasize } from "@/lib/keywords"
 
 export function ContactCta() {
   return (
@@ -14,9 +15,11 @@ export function ContactCta() {
               Ready for a spotless space?
             </h2>
             <p className="max-w-md text-pretty leading-relaxed text-primary-foreground/90">
-              Book your clean in under a minute. Message us on WhatsApp for
-              instant pricing and availability, or give us a call — we&apos;re
-              here {siteConfig.hours.display.toLowerCase()}.
+              <Emphasize>
+                Book your clean in under a minute. Message us on WhatsApp for
+                instant pricing and availability, or give us a call —
+              </Emphasize>{" "}
+              we&apos;re here {siteConfig.hours.display.toLowerCase()}.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <a

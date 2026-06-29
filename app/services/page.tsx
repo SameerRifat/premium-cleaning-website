@@ -7,6 +7,7 @@ import { ServicesIndexJsonLd } from "@/components/services/structured-data"
 import { ContactCta } from "@/components/home/contact-cta"
 import { services, getServicesByCategory } from "@/lib/services"
 import { siteConfig } from "@/lib/site-config"
+import { Emphasize } from "@/lib/keywords"
 
 export const metadata: Metadata = {
   title: "Our Cleaning Services",
@@ -73,9 +74,11 @@ export default function ServicesPage() {
               Cleaning for every corner of your life
             </h1>
             <p className="max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
-              From weekly home upkeep to deep cleans, upholstery care and
-              commercial contracts, choose the service that fits — delivered by
-              vetted, fully-insured professionals you can count on.
+              <Emphasize>
+                From weekly home upkeep to deep cleans, upholstery care and
+                commercial contracts, choose the service that fits — delivered by
+                vetted, fully-insured professionals you can count on.
+              </Emphasize>
             </p>
             <ul className="mt-1 flex flex-wrap gap-x-6 gap-y-3 border-t border-border/70 pt-6">
               {assurances.map((item) => (
@@ -116,7 +119,7 @@ export default function ServicesPage() {
                 {group.label}
               </h2>
               <p className="max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
-                {group.description}
+                <Emphasize>{group.description}</Emphasize>
               </p>
             </div>
 

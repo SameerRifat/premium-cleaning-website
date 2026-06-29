@@ -3,6 +3,7 @@ import { MessageCircle, Phone, Star, ShieldCheck, Clock, Leaf } from "lucide-rea
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { siteConfig, whatsappLink } from "@/lib/site-config"
+import { Emphasize } from "@/lib/keywords"
 
 const highlights = [
   { icon: ShieldCheck, label: "Fully insured & vetted" },
@@ -43,9 +44,12 @@ export function Hero() {
 
         {/* Subheadline */}
         <p className="mx-auto max-w-xl text-pretty text-lg leading-relaxed text-white/90 md:mx-0">
-          {siteConfig.name} connects you with professional, fully-insured
-          cleaners for your home or office. Book in under a minute and relax
-          while we take care of the rest.
+          {siteConfig.name}{" "}
+          <Emphasize>
+            connects you with professional, fully-insured cleaners for your home
+            or office. Book in under a minute and relax while we take care of
+            the rest.
+          </Emphasize>
         </p>
 
         {/* CTAs */}

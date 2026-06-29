@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { siteConfig } from "@/lib/site-config"
+import { Emphasize } from "@/lib/keywords"
 
 export function AboutStory() {
   return (
@@ -36,18 +37,23 @@ export function AboutStory() {
           </h2>
           <div className="flex flex-col gap-4 text-pretty leading-relaxed text-muted-foreground">
             <p>
-              {siteConfig.name} began in 2016 with a simple frustration shared by
-              thousands of UAE residents: booking a cleaner was a gamble. Different
-              person every visit, no accountability, no insurance, and no real way
-              to know who you were letting into your home.
+              {siteConfig.name}{" "}
+              <Emphasize>
+                began in 2016 with a simple frustration shared by thousands of
+                UAE residents: booking a cleaner was a gamble. Different person
+                every visit, no accountability, no insurance, and no real way to
+                know who you were letting into your home.
+              </Emphasize>
             </p>
             <p>
-              Our founder set out to build the opposite — a properly licensed
-              company where every cleaner is interviewed, background-checked and
-              trained, every booking is insured, and the same trusted
-              professional returns to your home each time. We started with a
-              handful of families in Al Majaz and grew through one thing:
-              clients telling their neighbours.
+              <Emphasize>
+                Our founder set out to build the opposite — a properly licensed
+                company where every cleaner is interviewed, background-checked
+                and trained, every booking is insured, and the same trusted
+                professional returns to your home each time. We started with a
+                handful of families in Al Majaz and grew through one thing:
+                clients telling their neighbours.
+              </Emphasize>
             </p>
           </div>
 
@@ -67,8 +73,11 @@ export function AboutStory() {
           </blockquote>
 
           <p className="text-pretty leading-relaxed text-muted-foreground">
-            Today we serve homes and offices across Sharjah and Ajman — and that
-            founding promise hasn&apos;t changed.
+            <Emphasize>
+              Today we serve homes and offices across Sharjah and Ajman — and
+              that founding promise
+            </Emphasize>{" "}
+            hasn&apos;t changed.
           </p>
         </div>
       </div>

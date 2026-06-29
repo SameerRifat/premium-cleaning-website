@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { Check } from "lucide-react"
 import { SectionHeading } from "@/components/section-heading"
+import { Emphasize } from "@/lib/keywords"
 
 const included = [
   "Detailed, room-by-room checklist",
@@ -28,7 +29,9 @@ export function BeforeAfter() {
                 <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
                   <Check className="size-3.5" />
                 </span>
-                <span className="leading-relaxed text-foreground">{item}</span>
+                <span className="leading-relaxed text-foreground">
+                  <Emphasize>{item}</Emphasize>
+                </span>
               </li>
             ))}
           </ul>
