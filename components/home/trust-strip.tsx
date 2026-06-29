@@ -1,4 +1,5 @@
 import { ShieldCheck, UserCheck, Leaf, Headphones } from "lucide-react"
+import { Emphasize } from "@/lib/keywords"
 
 const items = [
   {
@@ -40,7 +41,7 @@ export function TrustStrip() {
                 {item.title}
               </h3>
               <p className="text-xs leading-relaxed text-muted-foreground">
-                {item.description}
+                <Emphasize>{item.description}</Emphasize>
               </p>
             </div>
           </div>

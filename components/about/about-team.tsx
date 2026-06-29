@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { SectionHeading } from "@/components/section-heading"
 import { teamMembers } from "@/lib/team"
+import { Emphasize } from "@/lib/keywords"
 
 export function AboutTeam() {
   return (
@@ -41,7 +42,7 @@ export function AboutTeam() {
                 </div>
               </div>
               <p className="p-5 text-sm leading-relaxed text-muted-foreground">
-                {member.bio}
+                <Emphasize>{member.bio}</Emphasize>
               </p>
             </li>
           ))}

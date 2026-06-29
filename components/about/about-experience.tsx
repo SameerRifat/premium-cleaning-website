@@ -1,5 +1,6 @@
 import { Repeat, ClipboardCheck, Eye, MessageCircle } from "lucide-react"
 import { SectionHeading } from "@/components/section-heading"
+import { Emphasize } from "@/lib/keywords"
 
 const differentiators = [
   {
@@ -60,7 +61,7 @@ export function AboutExperience() {
                   {item.title}
                 </h3>
                 <p className="max-w-md text-pretty text-sm leading-relaxed text-muted-foreground">
-                  {item.description}
+                  <Emphasize>{item.description}</Emphasize>
                 </p>
               </div>
             </div>

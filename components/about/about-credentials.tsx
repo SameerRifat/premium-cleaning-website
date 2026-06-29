@@ -8,6 +8,7 @@ import {
 } from "lucide-react"
 import { buttonVariants } from "@/components/ui/button"
 import { whatsappLink } from "@/lib/site-config"
+import { Emphasize } from "@/lib/keywords"
 
 const credentials = [
   {
@@ -56,8 +57,10 @@ export function AboutCredentials() {
             The credentials that actually matter
           </h2>
           <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
-            Before you let anyone into your home, here is exactly what makes
-            Spotless UAE a legitimate, accountable choice in the UAE market.
+            <Emphasize>
+              Before you let anyone into your home, here is exactly what makes
+              Spotless UAE a legitimate, accountable choice in the UAE market.
+            </Emphasize>
           </p>
           <a
             href={whatsappLink()}
@@ -95,7 +98,7 @@ export function AboutCredentials() {
                   </h3>
                 </div>
                 <p className="text-pretty text-sm leading-relaxed text-muted-foreground">
-                  {item.description}
+                  <Emphasize>{item.description}</Emphasize>
                 </p>
               </div>
             </li>

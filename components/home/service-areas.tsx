@@ -4,6 +4,7 @@ import { buttonVariants } from "@/components/ui/button"
 import { SectionHeading } from "@/components/section-heading"
 import { cn } from "@/lib/utils"
 import { siteConfig } from "@/lib/site-config"
+import { Emphasize } from "@/lib/keywords"
 
 export function ServiceAreas() {
   const { serviceAreas } = siteConfig
@@ -103,7 +104,7 @@ export function ServiceAreas() {
                 <div className="relative mt-6 h-px w-full bg-gradient-to-r from-transparent via-border to-transparent" />
                 <p className="relative mt-4 flex items-center gap-2 text-xs font-medium text-muted-foreground">
                   <CheckCircle2 className="size-4 text-primary-end" />
-                  Vetted, fully-insured teams
+                  <Emphasize>Vetted, fully-insured teams</Emphasize>
                 </p>
               </div>
             </div>

@@ -23,6 +23,7 @@ import { ServiceDetailJsonLd } from "@/components/services/structured-data"
 import { ContactCta } from "@/components/home/contact-cta"
 import { cn } from "@/lib/utils"
 import { siteConfig, whatsappLink } from "@/lib/site-config"
+import { Emphasize } from "@/lib/keywords"
 import {
   getAllServiceSlugs,
   getRelatedServices,
@@ -165,7 +166,7 @@ export default async function ServiceDetailPage({
                 {service.name}
               </h1>
               <p className="max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
-                {service.longDescription}
+                <Emphasize>{service.longDescription}</Emphasize>
               </p>
 
               <div className="mt-1 flex flex-col gap-3 sm:flex-row">
@@ -261,8 +262,10 @@ export default async function ServiceDetailPage({
             Exactly what you get — and what you don&apos;t
           </h2>
           <p className="max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
-            No vague promises. Here is the precise scope of this service so you
-            know what to expect before you book.
+            <Emphasize>
+              No vague promises. Here is the precise scope of this service so you
+              know what to expect before you book.
+            </Emphasize>
           </p>
         </div>
 
@@ -309,7 +312,7 @@ export default async function ServiceDetailPage({
                       <Check className="size-3.5" strokeWidth={2.5} />
                     </span>
                     <span className="text-sm font-medium leading-relaxed text-foreground">
-                      {item}
+                      <Emphasize>{item}</Emphasize>
                     </span>
                     <span className="sr-only">{`Inclusion ${index + 1}`}</span>
                   </li>
@@ -342,7 +345,7 @@ export default async function ServiceDetailPage({
                 >
                   <X className="mt-0.5 size-4 shrink-0 text-muted-foreground/60" />
                   <span className="text-sm leading-relaxed text-muted-foreground">
-                    {item}
+                    <Emphasize>{item}</Emphasize>
                   </span>
                 </li>
               ))}
@@ -391,7 +394,7 @@ export default async function ServiceDetailPage({
                     {item.title}
                   </h3>
                   <p className="text-sm leading-relaxed text-ink-muted">
-                    {item.description}
+                    <Emphasize>{item.description}</Emphasize>
                   </p>
                 </div>
               </div>
