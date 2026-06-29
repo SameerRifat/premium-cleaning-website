@@ -28,7 +28,8 @@ export const siteConfig = {
    * Canonical site URL. Used by metadataBase and structured data. Replace with
    * the production domain once confirmed.
    */
-  url: "https://spotlessuae.ae",
+  url: "https://premium-cleaning-website-pied.vercel.app",
+  // url: "https://spotlessuae.ae",
 
   /** Contact details (NAP — Name, Address, Phone — must stay consistent site-wide). */
   contact: {
