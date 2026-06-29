@@ -1,5 +1,5 @@
 /**
- * The people behind Pristine Home Services. Single source of truth shared by
+ * The people behind Spotless UAE. Single source of truth shared by
  * the About page team section and the AboutPage/Organization structured data,
  * so the rendered team and the schema Person entities never drift apart.
  *
@@ -22,10 +22,10 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Omar Al Farsi",
     role: "Founder & Managing Director",
-    bio: "Founded Pristine in 2016 after one too many unreliable cleaning experiences, and still personally reviews service standards.",
+    bio: "Founded Spotless UAE in 2016 after one too many unreliable cleaning experiences, and still personally reviews service standards.",
     image: {
       src: "/images/about/team-1.png",
-      alt: "Omar Al Farsi, Founder and Managing Director of Pristine Home Services",
+      alt: "Omar Al Farsi, Founder and Managing Director of Spotless UAE",
     },
   },
   {
@@ -34,7 +34,7 @@ export const teamMembers: TeamMember[] = [
     bio: "Runs scheduling, logistics and quality across all four emirates so every booking arrives on time and fully equipped.",
     image: {
       src: "/images/about/team-2.png",
-      alt: "Priya Nair, Head of Operations at Pristine Home Services",
+      alt: "Priya Nair, Head of Operations at Spotless UAE",
     },
   },
   {
@@ -43,7 +43,7 @@ export const teamMembers: TeamMember[] = [
     bio: "Designs our vetting and training programme and signs off every cleaner before they ever enter a client's home.",
     image: {
       src: "/images/about/team-3.png",
-      alt: "Maria Santos, Training and Quality Lead at Pristine Home Services",
+      alt: "Maria Santos, Training and Quality Lead at Spotless UAE",
     },
   },
   {
@@ -52,7 +52,7 @@ export const teamMembers: TeamMember[] = [
     bio: "The friendly voice on WhatsApp — coordinates bookings, handles requests and makes sure every clean ends with a happy home.",
     image: {
       src: "/images/about/team-4.png",
-      alt: "Karim Hassan, Customer Care Lead at Pristine Home Services",
+      alt: "Karim Hassan, Customer Care Lead at Spotless UAE",
     },
   },
 ]

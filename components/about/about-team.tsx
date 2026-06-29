@@ -7,7 +7,7 @@ export function AboutTeam() {
     <section className="border-t border-border bg-secondary/40">
       <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-28">
         <SectionHeading
-          eyebrow="The people behind Pristine"
+          eyebrow="The people behind Spotless UAE"
           title="Real people, accountable for your clean"
           description="A small, dedicated team you can put a name and a face to — because trust starts with knowing who you're dealing with."
         />

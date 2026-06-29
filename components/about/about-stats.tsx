@@ -8,7 +8,7 @@ const stats = [
 export function AboutStats() {
   return (
     <section
-      aria-label="Pristine by the numbers"
+      aria-label="Spotless UAE by the numbers"
       className="relative overflow-hidden bg-ink text-ink-foreground"
     >
       {/* Subtle depth wash */}
@@ -20,7 +20,7 @@ export function AboutStats() {
       <div className="relative mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
         <p className="mb-10 flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary-end">
           <span className="h-px w-8 bg-primary-end" />
-          Pristine by the numbers
+          Spotless UAE by the numbers
         </p>
 
         <dl className="grid grid-cols-2 gap-x-2 gap-y-10 sm:gap-y-12 lg:grid-cols-4">

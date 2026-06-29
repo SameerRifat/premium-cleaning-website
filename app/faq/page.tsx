@@ -8,14 +8,14 @@ import { siteConfig } from "@/lib/site-config"
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description:
-    "Answers to common questions about Pristine Home Services — booking and availability, what's included, staff vetting and safety, products, pricing and the areas we cover across Sharjah and Ajman.",
+    "Answers to common questions about Spotless UAE — booking and availability, what's included, staff vetting and safety, products, pricing and the areas we cover across Sharjah and Ajman.",
   alternates: {
     canonical: "/faq",
   },
   openGraph: {
     title: `Frequently Asked Questions | ${siteConfig.name}`,
     description:
-      "Booking, what's included, staff vetting, products, pricing and service areas — clear answers about cleaning with Pristine Home Services across Sharjah & Ajman.",
+      "Booking, what's included, staff vetting, products, pricing and service areas — clear answers about cleaning with Spotless UAE across Sharjah & Ajman.",
     url: `${siteConfig.url}/faq`,
     type: "website",
   },
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `Frequently Asked Questions | ${siteConfig.name}`,
     description:
-      "Clear answers about booking, pricing, staff vetting, products and service areas with Pristine Home Services.",
+      "Clear answers about booking, pricing, staff vetting, products and service areas with Spotless UAE.",
   },
 }
 

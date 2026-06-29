@@ -4,8 +4,9 @@
  * contact buttons) reads from here so the real client details can be swapped in
  * one place once they are confirmed.
  *
- * NOTE: All values below are PLACEHOLDERS for "Pristine Home Services" and must
- * be replaced with the client's verified business information before launch.
+ * NOTE: Brand identity reflects "Spotless UAE". Contact details (phone, address,
+ * social) remain PLACEHOLDERS and must be replaced with the client's verified
+ * business information before launch.
  */
 
 export type ServiceArea = {
@@ -16,18 +17,18 @@ export type ServiceArea = {
 }
 
 export const siteConfig = {
-  name: "Pristine Home Services",
-  shortName: "Pristine",
+  name: "Spotless UAE",
+  shortName: "Spotless",
   /** Used in the title template and as a one-line positioning statement. */
-  tagline: "Trusted Home & Office Cleaning Across Sharjah & Ajman",
+  tagline: "Professional Home & Office Cleaning Across Sharjah & Ajman",
   description:
-    "Pristine Home Services delivers reliable, fully-insured residential and commercial cleaning across Sharjah and Ajman. Vetted professionals, eco-friendly products, and same-day availability.",
+    "Spotless UAE delivers reliable, fully-insured residential and commercial cleaning across Sharjah and Ajman. Vetted professionals, eco-friendly products, and same-day availability.",
 
   /**
    * Canonical site URL. Used by metadataBase and structured data. Replace with
    * the production domain once confirmed.
    */
-  url: "https://www.pristinehomeservices.ae",
+  url: "https://spotlessuae.ae",
 
   /** Contact details (NAP — Name, Address, Phone — must stay consistent site-wide). */
   contact: {
@@ -37,10 +38,10 @@ export const siteConfig = {
     /** Digits only, international format, for wa.me links. */
     whatsapp: "971588764651",
     whatsappDisplay: "+971 58 876 4651",
-    email: "hello@pristinehomeservices.ae",
+    email: "hello@spotlessuae.ae",
     /** Default pre-filled WhatsApp message. */
     whatsappMessage:
-      "Hi Pristine Home Services, I'd like to book a cleaning. Could you share availability and pricing?",
+      "Hi Spotless UAE, I'd like to book a cleaning. Could you share availability and pricing?",
   },
 
   /** Postal address used for the LocalBusiness schema and footer. */
