@@ -18,7 +18,7 @@ export function BeforeAfter() {
         <div className="flex flex-col gap-6">
           <SectionHeading
             align="left"
-            eyebrow="The Pristine Difference"
+            eyebrow="The Spotless Difference"
             title="See the difference a professional clean makes"
             description="We don't just tidy up — we transform your space. Here's what's included in every standard clean."
           />

@@ -11,7 +11,7 @@ import { siteConfig } from "@/lib/site-config"
 export const metadata: Metadata = {
   title: "Our Cleaning Services",
   description:
-    "Explore the full range of residential, specialised and commercial cleaning services from Pristine Home Services across Sharjah and Ajman. Vetted, fully-insured professionals.",
+    "Explore the full range of residential, specialised and commercial cleaning services from Spotless UAE across Sharjah and Ajman. Vetted, fully-insured professionals.",
   alternates: {
     canonical: "/services",
   },

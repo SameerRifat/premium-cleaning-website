@@ -14,7 +14,7 @@ const credentials = [
     icon: BadgeCheck,
     title: "UAE trade license",
     description:
-      "Pristine is a fully registered, licensed UAE business — not an informal operator. Our license is available on request before you book.",
+      "Spotless UAE is a fully registered, licensed UAE business — not an informal operator. Our license is available on request before you book.",
   },
   {
     icon: ShieldCheck,
@@ -57,7 +57,7 @@ export function AboutCredentials() {
           </h2>
           <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
             Before you let anyone into your home, here is exactly what makes
-            Pristine a legitimate, accountable choice in the UAE market.
+            Spotless UAE a legitimate, accountable choice in the UAE market.
           </p>
           <a
             href={whatsappLink()}

@@ -12,7 +12,7 @@ import { siteConfig } from "@/lib/site-config"
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Meet Pristine Home Services — a licensed, fully-insured UAE cleaning company with background-checked staff, family-safe products and a satisfaction guarantee. Trusted across Sharjah and Ajman since 2016.",
+    "Meet Spotless UAE — a licensed, fully-insured UAE cleaning company with background-checked staff, family-safe products and a satisfaction guarantee. Trusted across Sharjah and Ajman since 2016.",
   alternates: {
     canonical: "/about",
   },

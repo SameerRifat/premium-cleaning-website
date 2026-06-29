@@ -10,7 +10,7 @@ export function AboutStory() {
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-border shadow-2xl shadow-black/10">
             <Image
               src="/images/about/story.png"
-              alt="A Pristine cleaner wiping a kitchen counter to a streak-free shine in a modern Sharjah home"
+              alt="A Spotless UAE cleaner wiping a kitchen counter to a streak-free shine in a modern Sharjah home"
               fill
               sizes="(min-width: 1024px) 36rem, 100vw"
               className="object-cover"

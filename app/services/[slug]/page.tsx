@@ -372,7 +372,7 @@ export default async function ServiceDetailPage({
 
       {/* Booking assurance — high-contrast trust moment */}
       <section
-        aria-label="Why book with Pristine"
+        aria-label="Why book with Spotless UAE"
         className="relative overflow-hidden bg-ink text-ink-foreground"
       >
         <div

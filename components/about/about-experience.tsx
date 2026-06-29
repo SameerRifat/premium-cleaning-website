@@ -32,7 +32,7 @@ export function AboutExperience() {
   return (
     <section className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-28">
       <SectionHeading
-        eyebrow="The Pristine difference"
+        eyebrow="The Spotless difference"
         title="What working with us actually looks like"
         description="Trust isn't a slogan — it's the small things we do on every single booking."
       />
