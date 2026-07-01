@@ -48,26 +48,21 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: `${siteConfig.name} — ${siteConfig.tagline}`,
     description: siteConfig.description,
-    images: [
-      {
-        url: '/og-image.svg',
-        width: 1200,
-        height: 630,
-        alt: `${siteConfig.name} - Professional Cleaning Services`,
-      },
-    ],
+    // og:image is provided by the app/opengraph-image.png file convention
+    // (with alt text from app/opengraph-image.alt.txt).
   },
   twitter: {
     card: 'summary_large_image',
     title: `${siteConfig.name} — ${siteConfig.tagline}`,
     description: siteConfig.description,
-    images: ['/og-image.svg'],
+    // twitter:image falls back to the Open Graph image above.
   },
   alternates: {
     canonical: '/',
   },
-  // Favicon, SVG icon and Apple touch icon are provided via the Next.js
-  // file-based metadata conventions in /app (favicon.ico, icon.svg, apple-icon.png).
+  // Favicon, icon, Apple touch icon and web manifest are provided via the
+  // Next.js file-based metadata conventions in /app (favicon.ico, icon.png,
+  // apple-icon.png, manifest.ts).
 }
 
 export const viewport: Viewport = {

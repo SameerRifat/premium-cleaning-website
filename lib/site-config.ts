@@ -25,11 +25,18 @@ export const siteConfig = {
     "Spotless UAE delivers reliable, fully-insured residential and commercial cleaning across Sharjah and Ajman. Vetted professionals, eco-friendly products, and same-day availability.",
 
   /**
-   * Canonical site URL. Used by metadataBase and structured data. Replace with
-   * the production domain once confirmed.
+   * Canonical site URL. Drives metadataBase, canonical tags, sitemap, robots,
+   * JSON-LD and absolute OG image URLs — so it must always resolve to the right
+   * origin per environment.
+   *
+   * Set NEXT_PUBLIC_SITE_URL per environment (e.g. https://spotlessuae.ae in
+   * Vercel production, http://localhost:3000 locally). The NEXT_PUBLIC_ prefix
+   * is required because siteConfig is imported by client components too. Falls
+   * back to the staging deployment when unset.
    */
-  url: "https://premium-cleaning-website-pied.vercel.app",
-  // url: "https://spotlessuae.ae",
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    "https://premium-cleaning-website-pied.vercel.app",
 
   /** Contact details (NAP — Name, Address, Phone — must stay consistent site-wide). */
   contact: {
