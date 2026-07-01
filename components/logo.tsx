@@ -3,28 +3,13 @@ import Image from "next/image"
 import { cn } from "@/lib/utils"
 import { siteConfig } from "@/lib/site-config"
 
-type LogoVariant = "horizontal" | "horizontal-white" | "mark" | "mark-white"
-
-const SOURCES: Record<LogoVariant, { src: string; width: number; height: number }> = {
-  horizontal: { src: "/logo-horizontal.svg", width: 320, height: 72 },
-  "horizontal-white": { src: "/logo-horizontal-white.svg", width: 320, height: 72 },
-  mark: { src: "/logo-mark.svg", width: 64, height: 64 },
-  "mark-white": { src: "/logo-mark-white.svg", width: 64, height: 64 },
-}
-
 export function Logo({
   className,
   href = "/",
-  variant = "horizontal",
 }: {
   className?: string
   href?: string
-  /** Which lockup to render. Defaults to the primary horizontal combination mark. */
-  variant?: LogoVariant
 }) {
-  const { src, width, height } = SOURCES[variant]
-  const isMark = variant === "mark" || variant === "mark-white"
-
   return (
     <Link
       href={href}
@@ -35,12 +20,12 @@ export function Logo({
       aria-label={`${siteConfig.name} home`}
     >
       <Image
-        src={src}
+        src="/logo.png"
         alt={`${siteConfig.name} logo`}
-        width={width}
-        height={height}
+        width={320}
+        height={72}
         priority
-        className={cn("w-auto", isMark ? "h-9" : "h-9 sm:h-10")}
+        className="h-9 w-auto sm:h-10"
       />
     </Link>
   )

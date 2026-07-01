@@ -24,8 +24,8 @@ export function ServiceAreas() {
       {/* Decorative depth layer — abstract "coverage map" motif */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
         {/* Soft radial washes for depth */}
-        <div className="absolute inset-0 bg-[radial-gradient(60rem_40rem_at_85%_-10%,oklch(0.93_0.035_190/0.6),transparent)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(50rem_36rem_at_5%_110%,oklch(0.92_0.05_150/0.45),transparent)]" />
+        {/* <div className="absolute inset-0 bg-[radial-gradient(60rem_40rem_at_85%_-10%,oklch(0.93_0.035_190/0.6),transparent)]" /> */}
+        {/* <div className="absolute inset-0 bg-[radial-gradient(50rem_36rem_at_5%_110%,oklch(0.92_0.05_150/0.45),transparent)]" /> */}
         {/* Dot-grid texture, masked to fade at the edges */}
         <div className="absolute inset-0 opacity-[0.5] [background-image:radial-gradient(circle,var(--border)_1px,transparent_1px)] [background-size:22px_22px] [mask-image:radial-gradient(70%_60%_at_50%_35%,black,transparent)]" />
         {/* Brand blur orbs */}
